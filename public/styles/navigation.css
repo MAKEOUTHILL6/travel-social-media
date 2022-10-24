@@ -1,0 +1,118 @@
+#head-nav {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: 1rem;
+    z-index: 10;
+    top: 0;
+    position: sticky;
+    transition: 0.8 all ease;
+
+    @media screen and (max-width: 960px) {
+        transition: 0.8 all ease;
+    }
+}
+
+
+#navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+    max-width: 1100px;
+}
+
+#nav-logo {
+    color: #FFF;
+    justify-self: flex-start;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#mobile-icon {
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #fff;
+    }
+
+    ;
+}
+
+#nav-menu {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+    text-align: center;
+    margin-right: -22px;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+
+    ;
+};
+
+.nav-item {
+    height: 80px;
+}
+
+.nav-link {
+    color: #FFF;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0 1rem;
+    height: 100%;
+    cursor: pointer;
+}
+
+.nav-link:active {
+    border-bottom: 3px solid #01bf71;
+}
+
+
+#button-nav {
+    display: flex;
+    align-items: center;
+
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+
+#button-link {
+    border-radius: 50px;
+    background-color: #01bf71;
+    padding: 10px 22px;
+    color: #010606;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s ease-in-out;
+}
+
+#button-link:hover {
+    transition: all 0.2s ease-in-out;
+    background-color: #fff;
+    color: #010606;
+}
