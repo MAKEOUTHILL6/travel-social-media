@@ -5,7 +5,7 @@ import { animateScroll } from "react-scroll";
 
 
 
-export const Navigation = () => {
+export const Navigation = ({toggle}) => {
 
     const [scrollNav, setScrollNav] = useState(false);
 
@@ -41,7 +41,7 @@ export const Navigation = () => {
 
                     <Link to="/" id="nav-logo" onClick={toggleHome}>TRVL</Link>
 
-                    <div id="mobile-icon">
+                    <div id="mobile-icon" onClick={toggle}>
                         <FaBars />
                     </div>
 
