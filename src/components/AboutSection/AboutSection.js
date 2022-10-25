@@ -6,7 +6,7 @@ export const AboutSection = () => {
 
     return (
         <>
-            <div id="about-container">
+            <div className="about-container"  id='about'>
                 <div id="about-wrapper">
                     <div id="about-info">
                         <div id="col1">
@@ -21,7 +21,7 @@ export const AboutSection = () => {
                         </div>
                         <div id='col2'>
                             <div id='image-wrap'>
-                                <img id='about-image' src={Icon5}/>
+                                <img id='about-image' alt='car' src={Icon5}/>
                             </div>
                         </div>
                     </div>

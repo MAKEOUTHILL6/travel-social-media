@@ -1,11 +1,10 @@
-import { Link } from 'react-router-dom';
 import { FaBars } from 'react-icons/fa'
 import { useEffect, useState } from 'react';
-import { animateScroll } from "react-scroll";
+import { Link, animateScroll as scroll } from "react-scroll";
 
 
 
-export const Navigation = ({toggle}) => {
+export const Navigation = ({ toggle }) => {
 
     const [scrollNav, setScrollNav] = useState(false);
 
@@ -19,7 +18,7 @@ export const Navigation = ({toggle}) => {
     };
 
     useEffect(() => {
-        
+
         window.addEventListener('scroll', changeNav);
 
         return () => {
@@ -29,13 +28,13 @@ export const Navigation = ({toggle}) => {
     }, []);
 
     const toggleHome = () => {
-        animateScroll.scrollToTop();
+        scroll.scrollToTop();
     };
 
 
     return (
         <>
-            <nav id="head-nav" style={{ 'background-color': scrollNav ? '#transparent' : '#000' }}>
+            <nav className="head-nav" style={ scrollNav ? {backgroundColor: '#000'} : {backgroundColor:'transparent'} }>
 
                 <div id="navbar-container">
 
@@ -46,24 +45,26 @@ export const Navigation = ({toggle}) => {
                     </div>
 
                     <ul id="nav-menu">
-                        <li class="nav-item">
-                            <Link to="about" class="nav-link"
+                        <li className="nav-item">
+                            <Link className="nav-link"
+                                to="about"
                                 smooth='true'
                                 duration={500}
                                 exact='true'
                                 offset={-80}
                             >About</Link>
                         </li>
-                        <li class="nav-item">
-                            <Link to="services" class="nav-link"
+                        <li className="nav-item">
+                            <Link className="nav-link"
+                                to="services"
                                 smooth='true'
                                 duration={500}
                                 exact='true'
-                                offset={-80}
+                                offset={-50}
                             >Services</Link>
                         </li>
-                        <li class="nav-item">
-                            <Link to="" class="nav-link">Discover</Link>
+                        <li className="nav-item">
+                            <Link to="" className="nav-link">Discover</Link>
                         </li>
                     </ul>
 

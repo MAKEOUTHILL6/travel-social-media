@@ -1,5 +1,6 @@
-#head-nav {
+.head-nav {
     background-color: #000;
+    margin-top: -30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -8,10 +9,12 @@
     z-index: 10;
     top: 0;
     position: sticky;
-    transition: 0.8 all ease;
+    transition: ease all 0.8s;
+}
 
-    @media screen and (max-width: 960px) {
-        transition: 0.8 all ease;
+@media screen and (max-width: 960px) {
+    .head-nav {
+        transition: ease all 0.8s;
     }
 }
 
@@ -41,7 +44,10 @@
 #mobile-icon {
     display: none;
 
-    @media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 768px) {
+    #mobile-icon {
         display: block;
         position: absolute;
         top: 0;
@@ -51,8 +57,6 @@
         cursor: pointer;
         color: #fff;
     }
-
-    ;
 }
 
 #nav-menu {
@@ -62,12 +66,14 @@
     text-align: center;
     margin-right: -22px;
 
-    @media screen and (max-width: 768px) {
-        display: none;
-    }
+}
 
-    ;
-};
+@media screen and (max-width: 768px) {
+    #nav-menu {
+        display: none;
+
+    }
+}
 
 .nav-item {
     height: 80px;
@@ -91,9 +97,12 @@
 #button-nav {
     display: flex;
     align-items: center;
+}
 
-    @media screen and (max-width: 768px) {
+@media screen and (max-width: 768px) {
+    #button-nav {
         display: none;
+
     }
 }
 

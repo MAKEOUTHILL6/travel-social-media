@@ -7,9 +7,6 @@ export const Sidebar = ({
     toggle,
 }) => {
 
-
-    // style={ isOpen ? {opacity: '100%', top: '0'}: {opacity: '0', top: '-100%'} }
-
     return (
         <aside id='sidebar-container' style={ isOpen ? {opacity: '100%', top: '0'}: {opacity: '0', top: '-100%'} } >
 
