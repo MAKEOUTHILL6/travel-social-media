@@ -4,6 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import { Home } from './pages/Home';
 import { useState } from 'react';
 import { Sidebar } from './components/Sidebar/Sidebar';
+import { Register } from './components/Register/Register';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
 
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/register' element={<Register />}></Route>
       </Routes>
     </div>
   );

@@ -1,5 +1,6 @@
 import { FaBars } from 'react-icons/fa'
 import { useEffect, useState } from 'react';
+import {Link as LinkRouter} from 'react-router-dom';
 import { Link, animateScroll as scroll } from "react-scroll";
 
 
@@ -38,7 +39,7 @@ export const Navigation = ({ toggle }) => {
 
                 <div id="navbar-container">
 
-                    <Link to="/" id="nav-logo" onClick={toggleHome}>TRVL</Link>
+                    <LinkRouter to="/" id="nav-logo" onClick={toggleHome}>TRVL</LinkRouter>
 
                     <div id="mobile-icon" onClick={toggle}>
                         <FaBars />
@@ -69,9 +70,9 @@ export const Navigation = ({ toggle }) => {
                     </ul>
 
                     <nav id="button-nav">
-                        <Link to="" id="button-link">
+                        <LinkRouter to="/register" id="button-link">
                             Sign up
-                        </Link>
+                        </LinkRouter>
                     </nav>
 
                 </div>
