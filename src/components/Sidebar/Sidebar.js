@@ -22,7 +22,7 @@ export const Sidebar = ({
                 </ul>
 
                 <div id='sidebar-button-wrapper'>
-                    <LinkRouter id='sidebar-button' to=''>Sign up</LinkRouter>
+                    <LinkRouter id='sidebar-button' to='/register'>Sign up</LinkRouter>
                 </div>
             </div>
 
