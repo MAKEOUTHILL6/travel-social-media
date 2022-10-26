@@ -53,6 +53,18 @@ export async function post(url, data) {
     return await request(url, getOptions('post', data));
 }
 
+
+export async function login(username, password) {
+
+    const result = await post(settings.host + '/user/login', { username, password });
+
+    sessionStorage.setItem('username', result.username);
+    sessionStorage.setItem('accessToken', result.accessToken);
+    sessionStorage.setItem('userId', result._id);
+
+    return result;
+};
+
 export async function register(username, password, rePassword) {
     const result = await post(settings.host + '/user/register', { username, password, rePassword });
 

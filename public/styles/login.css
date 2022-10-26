@@ -1,56 +1,52 @@
-#register-container {
+#login-container {
     box-shadow: 0px 0px 10px 2px rgb(111, 44, 122);
     padding-top: 30px;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
     border-radius: 3px;
 }
 
-.register-container-info {
+.login-container-info {
     background-color: rgba(255, 255, 255, 0.15);
     width: 600px;
-    height: 580px;
+    height: 550px;
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     line-height: 1.5;
     left: 28%;
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
 }
 
-.register-container-info>.container-text>h2 {
-    padding-top: 0.4em;
-}
-
-.container-text {
+.login-container-text {
     padding: 10px 10px 10px 10px;
     text-align: center;
 }
 
-.container-text>h2 {
+.login-container-text>h2 {
     font-size: 1.6rem;
     text-align: center;
     color: #000;
 }
 
-.container-text>p {
+.login-container-text>p {
     font-size: 14px;
     color: #000;
     margin: 2px 0;
     margin-bottom: 15px;
 }
 
-.container-text>input{
+.login-container-text>input {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 350px;
+    width: 250px;
     border: none;
     padding: 12px;
     border-radius: 3px;
 }
 
-.container-text>button {
+.login-container-text>button {
     width: 200px;
     border: none;
     padding: 12px;
@@ -65,19 +61,18 @@ label {
     font-weight: 700;
 }
 
-.container-text>input {
+.login-container-text>input {
     border: 2px solid #01bf71;
     margin: 3px 0 7px;
     font-size: 0.8rem;
     color: #656880;
 }
 
-.container-text>.register-btn{
-    /* background-image: linear-gradient(to right, #19BEC2, #01bf71); */
-    background-color: black;
-    justify-content: center;
+.login-container-text>.login-btn {
+    /* background-image: linear-gradient(to right, #19BEC2, #8C1415); */
+    background-color: #000;
     margin: 0 auto;
-    display: flex;
+    display: block;
     color: #fff;
     font-size: 1rem;
     cursor: pointer;
@@ -85,9 +80,10 @@ label {
     transition: background-color .3s ease-in-out;
 }
 
-.register-btn:hover{
+.login-btn:hover {
     background-color: white;
     color: #000;
+    box-shadow: none;
 }
 
 span {
@@ -98,22 +94,20 @@ span {
     font-size: 12px;
 }
 
-.card-no-account {
+.login-card-no-account {
     padding: 1rem 1rem;
     text-align: center;
     font-size: .875rem;
-    margin-top: 20px;
-    color: #000;
+    color: #190c4d;
 }
 
-.card-no-account>p>a {
+.login-card-no-account>p>a {
+    font-weight: 500;
     color: #fff;
-    font-weight: 500;
 }
 
-.card-no-account>p>a:hover {
+.login-card-no-account>p>a:hover {
     color: #01bf71;
-    font-weight: 500;
 }
 
 .gender {

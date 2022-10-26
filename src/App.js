@@ -5,6 +5,7 @@ import { Home } from './pages/Home';
 import { useState } from 'react';
 import { Sidebar } from './components/Sidebar/Sidebar';
 import { Register } from './components/Register/Register';
+import { Login } from './components/Login/Login';
 
 function App() {
 
@@ -20,8 +21,9 @@ function App() {
       <Navigation toggle={toggle} />
 
       <Routes>
-        <Route path='/' element={<Home />}></Route>
-        <Route path='/register' element={<Register />}></Route>
+        <Route path='/' element={<Home />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/login' element={<Login />} />
       </Routes>
     </div>
   );

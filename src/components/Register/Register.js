@@ -1,9 +1,11 @@
 import {register} from '../../api/data.js';
 import Video from '../../video/video.mp4'
 import {useNavigate} from 'react-router-dom'
+import {Link as LinkRouter} from 'react-router-dom';
 
 
-export const Register =  () => {
+
+export const Register = () => {
 
     const navigate = useNavigate();
 
@@ -15,8 +17,6 @@ export const Register =  () => {
         let username = formData.get('username').trim();
         let password = formData.get('password').trim();
         let rePassword = formData.get('rePassword').trim();
-
-        console.log(username, password, rePassword);
 
         await register(username, password, rePassword);
 
@@ -33,6 +33,7 @@ export const Register =  () => {
             <div className="register-container-info">
 
                 <form method="POST" className="container-text" onSubmit={handleRegister} >
+                    
                     <h2>Register</h2>
                     <p>Register to join a community full of explorers.</p>
 
@@ -48,8 +49,9 @@ export const Register =  () => {
                     <button type="submit" className="register-btn">Register</button>
 
                     <div className="card-no-account">
-                        <p>Already have an account? <a href="/auth/login"> Sign in </a> </p>
+                        <p>Already have an account? <LinkRouter to="/login"> Sign in </LinkRouter></p>
                     </div>
+
                 </form>
 
             </div>
