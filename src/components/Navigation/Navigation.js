@@ -32,12 +32,17 @@ export const Navigation = ({ toggle }) => {
         scroll.scrollToTop();
     };
 
+    
 
-    let user = null;
 
-    if(sessionStorage.getItem('username') != null){
-        user = sessionStorage.getItem('username');
-    }
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        if (sessionStorage.getItem('username') != null) {
+            setUser(sessionStorage.getItem('username'))
+        }
+
+    }, []);
 
     return (
         <>
@@ -77,7 +82,7 @@ export const Navigation = ({ toggle }) => {
 
                     {user ?
                      <nav id="button-nav">
-                        <LinkRouter to="/register" id="button-link">
+                        <LinkRouter to="/profile" id="button-link">
                             Welcome, {user}
                         </LinkRouter>
                     </nav>

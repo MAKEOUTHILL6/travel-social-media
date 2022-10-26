@@ -1,6 +1,6 @@
 import { MdArrowForward, MdArrowRight } from 'react-icons/md';
 import { Link as LinkScroll } from 'react-scroll';
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Video from '../../video/video.mp4'
 
 
@@ -11,12 +11,14 @@ export const HeroSection = () => {
         setHover(!hover)
     };
 
-    let user = null;
+    const [user, setUser] = useState(null);
 
-    if(sessionStorage.getItem('username') != null){
-        user = sessionStorage.getItem('username');
-    }
+    useEffect(() => {
+        if (sessionStorage.getItem('username') != null) {
+            setUser(sessionStorage.getItem('username'))
+        }
 
+    }, []);
 
 
     return (
@@ -34,20 +36,20 @@ export const HeroSection = () => {
                 {user ? <p id="hero-p">
                     Click discover and see what your friends are up to
                 </p>
-                :
-                <p id="hero-p">
-                    Sign up today and see what your friends are up to
-                </p>
+                    :
+                    <p id="hero-p">
+                        Sign up today and see what your friends are up to
+                    </p>
                 }
-                
+
                 {user ?
-                 <div id="hero-button-wrapper">
-                    <LinkScroll onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Discover {hover? <MdArrowForward />: <MdArrowRight />} </LinkScroll>
-                </div>
-                :
-                <div id="hero-button-wrapper">
-                    <LinkScroll onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Get Started {hover? <MdArrowForward />: <MdArrowRight />} </LinkScroll>
-                </div>
+                    <div id="hero-button-wrapper">
+                        <LinkScroll onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Discover {hover ? <MdArrowForward /> : <MdArrowRight />} </LinkScroll>
+                    </div>
+                    :
+                    <div id="hero-button-wrapper">
+                        <LinkScroll onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Get Started {hover ? <MdArrowForward /> : <MdArrowRight />} </LinkScroll>
+                    </div>
                 }
 
             </div>

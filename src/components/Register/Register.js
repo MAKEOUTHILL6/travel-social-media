@@ -1,9 +1,8 @@
-import {register} from '../../api/data.js';
+import { register } from '../../api/data.js';
 import Video from '../../video/video.mp4'
-import {useNavigate} from 'react-router-dom'
-import {Link as LinkRouter} from 'react-router-dom';
-
-
+import { useNavigate } from 'react-router-dom'
+import { Link as LinkRouter } from 'react-router-dom';
+import { AuthNav } from '../AuthNav/AuthNav.js';
 
 export const Register = () => {
 
@@ -24,37 +23,45 @@ export const Register = () => {
     }
 
     return (
-        <section id="register-container">
 
-            <div id="hero-video-container">
-                <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
-            </div>
+        <>
+            <AuthNav />
 
-            <div className="register-container-info">
+            <section id="register-container">
 
-                <form method="POST" className="container-text" onSubmit={handleRegister} >
-                    
-                    <h2>Register</h2>
-                    <p>Register to join a community full of explorers.</p>
+                <div id="hero-video-container">
+                    <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
+                </div>
 
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" placeholder="Username" name="username" />
+                <div className="register-container-info">
 
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" placeholder="*****" name="password" />
+                    <form method="POST" className="container-text" onSubmit={handleRegister} >
 
-                    <label htmlFor="rePassword">Repeat password:</label>
-                    <input type="password" id="re-password" placeholder="*****" name="rePassword" />
+                        <h2>Register</h2>
+                        <p>Register to join a community full of explorers.</p>
 
-                    <button type="submit" className="register-btn">Register</button>
+                        <label htmlFor="username">Username:</label>
+                        <input type="text" id="username" placeholder="Username" name="username" />
 
-                    <div className="card-no-account">
-                        <p>Already have an account? <LinkRouter to="/login"> Sign in </LinkRouter></p>
-                    </div>
+                        <label htmlFor="password">Password:</label>
+                        <input type="password" id="password" placeholder="*****" name="password" />
 
-                </form>
+                        <label htmlFor="rePassword">Repeat password:</label>
+                        <input type="password" id="re-password" placeholder="*****" name="rePassword" />
 
-            </div>
-        </section>
+                        <button type="submit" className="register-btn">Register</button>
+
+                        <div className="card-no-account">
+                            <p>Already have an account? <LinkRouter to="/login"> Sign in </LinkRouter></p>
+                        </div>
+
+                    </form>
+
+                </div>
+            </section>
+        </>
+
+
+
     )
 }
