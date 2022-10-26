@@ -1,9 +1,8 @@
 import { FaBars } from 'react-icons/fa'
 import { useEffect, useState } from 'react';
-import {Link as LinkRouter} from 'react-router-dom';
+import { Link as LinkRouter } from 'react-router-dom';
 import { Link, animateScroll as scroll } from "react-scroll";
-
-
+import { logout } from "../../api/data.js";
 
 export const Navigation = ({ toggle }) => {
 
@@ -32,7 +31,7 @@ export const Navigation = ({ toggle }) => {
         scroll.scrollToTop();
     };
 
-    
+
 
 
     const [user, setUser] = useState(null);
@@ -44,9 +43,17 @@ export const Navigation = ({ toggle }) => {
 
     }, []);
 
+
+    const handleLogout = async () => {
+        await logout();
+
+        window.location.reload(false)
+
+    }
+
     return (
         <>
-            <nav className="head-nav" style={ scrollNav ? {backgroundColor: '#000'} : {backgroundColor:'transparent'} }>
+            <nav className="head-nav" style={scrollNav ? { backgroundColor: '#000' } : { backgroundColor: 'transparent' }}>
 
                 <div id="navbar-container">
 
@@ -81,17 +88,29 @@ export const Navigation = ({ toggle }) => {
                     </ul>
 
                     {user ?
-                     <nav id="button-nav">
-                        <LinkRouter to="/profile" id="button-link">
-                            Welcome, {user}
-                        </LinkRouter>
-                    </nav>
-                    : 
-                    <nav id="button-nav">
-                        <LinkRouter to="/register" id="button-link">
-                            Sign up
-                        </LinkRouter>
-                    </nav>
+                        <>
+
+                        {/* STYLE THE WELCOME AND LOGOUT  */}
+                        
+                            <nav id="button-nav">
+                                <LinkRouter to="/profile" id="button-link">
+                                    Welcome, {user}
+                                </LinkRouter>
+                            </nav>
+
+                            <nav id="button-nav">
+                                <LinkRouter id="button-link" onClick={handleLogout}>
+                                    Logout
+                                </LinkRouter>
+                            </nav>
+                        </>
+
+                        :
+                        <nav id="button-nav">
+                            <LinkRouter to="/register" id="button-link">
+                                Sign up
+                            </LinkRouter>
+                        </nav>
                     }
 
                 </div>

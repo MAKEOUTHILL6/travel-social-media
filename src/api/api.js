@@ -49,6 +49,10 @@ function getOptions(method = 'get', body) {
 }
 
 
+export async function get(url) {
+    return await request(url, getOptions());
+}
+
 export async function post(url, data) {
     return await request(url, getOptions('post', data));
 }
@@ -73,4 +77,14 @@ export async function register(username, password, rePassword) {
     sessionStorage.setItem('userId', result._id);
 
     return result
+}
+
+export async function logout() {
+    const result = await get(settings.host + '/user/logout');
+
+    sessionStorage.removeItem('username');
+    sessionStorage.removeItem('accessToken');
+    sessionStorage.removeItem('userId');
+
+    return result;
 }
