@@ -33,6 +33,12 @@ export const Navigation = ({ toggle }) => {
     };
 
 
+    let user = null;
+
+    if(sessionStorage.getItem('username') != null){
+        user = sessionStorage.getItem('username');
+    }
+
     return (
         <>
             <nav className="head-nav" style={ scrollNav ? {backgroundColor: '#000'} : {backgroundColor:'transparent'} }>
@@ -69,11 +75,19 @@ export const Navigation = ({ toggle }) => {
                         </li>
                     </ul>
 
+                    {user ?
+                     <nav id="button-nav">
+                        <LinkRouter to="/register" id="button-link">
+                            Welcome, {user}
+                        </LinkRouter>
+                    </nav>
+                    : 
                     <nav id="button-nav">
                         <LinkRouter to="/register" id="button-link">
                             Sign up
                         </LinkRouter>
                     </nav>
+                    }
 
                 </div>
 

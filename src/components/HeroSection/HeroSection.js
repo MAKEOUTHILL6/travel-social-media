@@ -1,4 +1,4 @@
-import { MdKeyboardArrowRight, MdArrowForward, MdArrowBack, MdArrowRight } from 'react-icons/md';
+import { MdArrowForward, MdArrowRight } from 'react-icons/md';
 import { Link as LinkScroll } from 'react-scroll';
 import { useState } from "react";
 import Video from '../../video/video.mp4'
@@ -10,6 +10,13 @@ export const HeroSection = () => {
     const onHover = () => {
         setHover(!hover)
     };
+
+    let user = null;
+
+    if(sessionStorage.getItem('username') != null){
+        user = sessionStorage.getItem('username');
+    }
+
 
 
     return (
@@ -24,13 +31,25 @@ export const HeroSection = () => {
                     Travelling Made Easy
                 </div>
 
+                {user ? <p id="hero-p">
+                    Click discover and see what your friends are up to
+                </p>
+                :
                 <p id="hero-p">
                     Sign up today and see what your friends are up to
                 </p>
-
+                }
+                
+                {user ?
+                 <div id="hero-button-wrapper">
+                    <LinkScroll onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Discover {hover? <MdArrowForward />: <MdArrowRight />} </LinkScroll>
+                </div>
+                :
                 <div id="hero-button-wrapper">
                     <LinkScroll onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Get Started {hover? <MdArrowForward />: <MdArrowRight />} </LinkScroll>
                 </div>
+                }
+
             </div>
         </div>
     )
