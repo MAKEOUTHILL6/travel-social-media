@@ -31,6 +31,7 @@
 
 .publication-image {
     width: 100%;
+    height: 200px;
     border-radius: 6px;
     margin-bottom: 10px;
 }
@@ -65,8 +66,8 @@
 }
 
 .location-button {
-    display: flex;
-    justify-content: center;
+    position: absolute;
+    bottom: 150px;
     text-decoration: none;
     color: #000;
     background-color: #01bf71;
@@ -74,7 +75,6 @@
     font-size: 15px;
     padding: 6px 18px;
     border-radius: 14px;
-    margin-top: 9px;
     cursor: pointer;
     margin-bottom: 12px;
     transition: all 0.2s ease-in-out;
@@ -86,11 +86,16 @@
     color: white;
 }
 
-.no-posts{
+.no-posts {
     text-transform: uppercase;
     position: absolute;
     font-size: 20px;
     top: 300px;
     margin: 0 auto;
     left: 560px
+}
+
+.location-desc-wrapper {
+    width: 150px;
+    margin-bottom: 20px;
 }

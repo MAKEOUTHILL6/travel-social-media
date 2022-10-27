@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 
 
 export const Publication = ({ publication }) => {
-
 
     return (
         <article className="publication-wrapper">
@@ -18,14 +18,12 @@ export const Publication = ({ publication }) => {
 
             <h2 className="location-title">{publication.title}</h2>
 
-            {publication.description ?
-
+            <div className="location-desc-wrapper">
                 <p className="location-desc">
                     {publication.description}
                 </p>
-                :
-                false
-            }
+            </div>
+
 
             <Link className="location-button" to={`/discover/${publication._id}`}>Read More</Link>
 
