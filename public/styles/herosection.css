@@ -91,6 +91,7 @@
 }
 
 #hero-button {
+    text-decoration: none;
     border-radius: 50px;
     background-color: #01bf71;
     white-space: nowrap;

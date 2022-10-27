@@ -1,5 +1,5 @@
 import { MdArrowForward, MdArrowRight } from 'react-icons/md';
-import { Link as LinkScroll } from 'react-scroll';
+import { Link as LinkRouter } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import Video from '../../video/video.mp4'
 
@@ -44,11 +44,11 @@ export const HeroSection = () => {
 
                 {user ?
                     <div id="hero-button-wrapper">
-                        <LinkScroll onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Discover {hover ? <MdArrowForward /> : <MdArrowRight />} </LinkScroll>
+                        <LinkRouter to='/discover' onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Discover {hover ? <MdArrowForward /> : <MdArrowRight />} </LinkRouter>
                     </div>
                     :
                     <div id="hero-button-wrapper">
-                        <LinkScroll onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Get Started {hover ? <MdArrowForward /> : <MdArrowRight />} </LinkScroll>
+                        <LinkRouter to='/register' onMouseEnter={onHover} onMouseLeave={onHover} id='hero-button'>Get Started {hover ? <MdArrowForward /> : <MdArrowRight />} </LinkRouter>
                     </div>
                 }
 

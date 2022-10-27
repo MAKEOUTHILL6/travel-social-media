@@ -83,7 +83,7 @@ export const Navigation = ({ toggle }) => {
                             >Services</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="" className="nav-link">Discover</Link>
+                            <Link to="/discover" className="nav-link">Discover</Link>
                         </li>
                     </ul>
 
