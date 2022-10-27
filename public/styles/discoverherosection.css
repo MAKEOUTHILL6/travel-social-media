@@ -1,3 +1,85 @@
-#discover-main{
-    
+#discover-main {
+    height: 1100px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+#publication-container {
+    width: 85%;
+    border-radius: 6px;
+    background-color: #fefefefa;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.publication-wrapper {
+    margin-top: 40px;
+    margin-left: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 8px;
+    border: 1.8px solid #e9eff2;
+    background-color: white;
+    padding: 6px;
+    height: 450px;
+    -webkit-box-shadow: -1px 16px 41px -6px rgba(0, 0, 0, 0.64);
+    -moz-box-shadow: -1px 16px 41px -6px rgba(0, 0, 0, 0.64);
+    box-shadow: -1px 16px 41px -6px rgba(0, 0, 0, 0.64);
+}
+
+.publication-image {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+
+.location-list {
+    margin: 0;
+    padding: 0 6px;
+    margin-bottom: 12px;
+    list-style: none;
+}
+
+.location-tag {
+    display: inline-block;
+    border: 1.6px solid #e9eff2;
+    border-radius: 10px;
+    padding: 2px 15px;
+    margin-right: 5px;
+}
+
+.location-title {
+    font-size: 21px;
+    padding: 0 6px;
+    margin: 0;
+    margin-bottom: 12px;
+}
+
+.location-desc {
+    padding: 0 6px;
+    font-size: 14px;
+    color: #a2abb6;
+}
+
+.location-button {
+    color: #000;
+    background-color: #01bf71;
+    border: none;
+    font-size: 15px;
+    padding: 6px 18px;
+    border-radius: 14px;
+    display: block;
+    margin-top: 9px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: all 0.2s ease-in-out;
+
+}
+
+.location-button:hover {
+    background-color: #000;
+    color: white;
 }

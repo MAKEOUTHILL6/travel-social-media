@@ -34,6 +34,12 @@ export const DiscoverNav = () => {
                                 Welcome, <b id='welcome-user'>{user}</b>
                             </LinkRouter>
                         </nav>
+
+                        <nav id="create-button-nav">
+                            <LinkRouter to="/create-post" id="create-button-link">
+                                Create Post
+                            </LinkRouter>
+                        </nav>
                     </>
 
                     :

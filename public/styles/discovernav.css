@@ -47,6 +47,7 @@
 }
 
 #list-item {
+    list-style-type: none;
     height: 80px;
 }
 
