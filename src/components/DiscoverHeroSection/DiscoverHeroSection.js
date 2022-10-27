@@ -1,29 +1,17 @@
+import { Publication } from './Publication';
+import PublicationContext from '../../services/PublicationContext';
+import { useContext } from 'react';
 
 export const DiscoverHeroSection = () => {
+
+    
+    const {publications} = useContext(PublicationContext);
 
     return (
         <main id="discover-main">
             <div id="publication-container">
-                <article className="publication-wrapper">
 
-                    <img className="publication-image"
-                        src="https://images.unsplash.com/photo-1583244685026-d8519b5e3d21?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-                        alt="" />
-
-                    <ul className="location-list">
-                        <li className="location-tag">Greece</li>
-                    </ul>
-
-                    <h2 className="location-title">Kalamitsi</h2>
-
-                    <p className="location-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate eum commodi quas,
-                        delectus est omnis et quo cumque, praesentium ducimus dolor sequi id. Quod corporis itaque laborum enim.
-                        Quidem, omnis.
-                    </p>
-
-                    <button className="location-button">Read More</button>
-
-                </article>
+                {publications.length > 0 ? publications.map(x => <Publication key={x._id} publication={x} />): <h3 className='no-posts'>No publications yet.</h3>}
 
             </div>
         </main>

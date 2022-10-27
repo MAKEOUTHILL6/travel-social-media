@@ -8,7 +8,7 @@ export const Discover = () => {
     return(
         <>
             <DiscoverNav />
-            <DiscoverHeroSection />
+            <DiscoverHeroSection/>
             
         </>
     )

@@ -1,5 +1,5 @@
 import { register } from '../../api/data.js';
-import Video from '../../video/video.mp4'
+import Video from '../../video/video.mp4';
 import { useNavigate } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom';
 import { AuthNav } from '../AuthNav/AuthNav.js';

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import { login } from '../../api/data.js';
 import Video from '../../video/video.mp4';
 import { Link as LinkRouter } from 'react-router-dom';

@@ -65,13 +65,15 @@
 }
 
 .location-button {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
     color: #000;
     background-color: #01bf71;
     border: none;
     font-size: 15px;
     padding: 6px 18px;
     border-radius: 14px;
-    display: block;
     margin-top: 9px;
     cursor: pointer;
     margin-bottom: 12px;
@@ -82,4 +84,13 @@
 .location-button:hover {
     background-color: #000;
     color: white;
+}
+
+.no-posts{
+    text-transform: uppercase;
+    position: absolute;
+    font-size: 20px;
+    top: 300px;
+    margin: 0 auto;
+    left: 560px
 }

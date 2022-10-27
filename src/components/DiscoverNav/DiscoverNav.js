@@ -22,7 +22,7 @@ export const DiscoverNav = () => {
                 <ul id='searchbar-container'>
                     <li id='list-item'>
                         <form action="/search" method="POST" id='form-item' >
-                            <input type="text" class="searchbar" name="search" placeholder="Search..." />
+                            <input type="text" className="searchbar" name="search" placeholder="Search..." />
                         </form>
                     </li>
                 </ul>
