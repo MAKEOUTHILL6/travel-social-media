@@ -10,9 +10,15 @@ export const CreatePublication = () => {
 
     const [userId, setUserId] = useState(null);
 
+    const [username, setUser] = useState(null);
+
     useEffect(() => {
         if (sessionStorage.getItem('userId') != null) {
             setUserId(sessionStorage.getItem('userId'))
+        }
+
+        if (sessionStorage.getItem('username') != null) {
+            setUser(sessionStorage.getItem('username'))
         }
 
     }, []);
@@ -29,13 +35,15 @@ export const CreatePublication = () => {
         const location = formData.get('location').trim();
         const description = formData.get('description').trim();
         const ownerId = userId;
-
+        const user = username
+        
         const data = {
             title,
             image,
             location,
             description,
-            ownerId
+            ownerId,
+            user,
         };
 
         await createPost(data)

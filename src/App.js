@@ -9,6 +9,7 @@ import { DetailsPage } from './components/DetailsPage/DetailsPage';
 import { PublicationProvider } from './services/PublicationContext';
 
 
+
 function App() {
 
     return (
@@ -21,7 +22,7 @@ function App() {
                     <Route path='/create-post' element={<CreatePublication />} />
 
                     <Route path='/discover' element={<Discover />} />
-                    <Route path='/discover/:postId' element={<DetailsPage />} />
+                    <Route path='/discover/:postId' element={<DetailsPage/>} />
                 </Routes>
             </PublicationProvider>
 

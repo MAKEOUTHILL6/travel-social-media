@@ -18,9 +18,9 @@ export const Publication = ({ publication }) => {
 
             <h2 className="location-title">{publication.title}</h2>
 
-            <div className="location-desc-wrapper">
-                <p className="location-desc">
-                    {publication.description}
+            <div className="location-user-wrapper">
+                <p className="location-user">
+                    Posted By: <Link className='location-pub-user'>{publication.user}</Link>
                 </p>
             </div>
 

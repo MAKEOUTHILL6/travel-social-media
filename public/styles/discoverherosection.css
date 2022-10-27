@@ -59,11 +59,6 @@
     margin-bottom: 12px;
 }
 
-.location-desc {
-    padding: 0 6px;
-    font-size: 14px;
-    color: #a2abb6;
-}
 
 .location-button {
     position: absolute;
@@ -95,7 +90,17 @@
     left: 560px
 }
 
-.location-desc-wrapper {
+.location-user-wrapper {
     width: 150px;
-    margin-bottom: 20px;
+}
+
+.location-user {
+    padding: 0 6px;
+    font-size: 14px;
+    color: #a2abb6;
+}
+
+.location-pub-user{
+    font-weight: 700;
+    color: #01bf71;
 }
