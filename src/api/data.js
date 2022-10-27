@@ -18,6 +18,5 @@ export async function createPost(data){
 }
 
 export async function deletePublication(id) {
-    console.log(id);
     return await api.del(host + '/data/publication/' + id);
 }

@@ -32,33 +32,33 @@ export const DetailsPage = () => {
     return (
         <>
             <section id="details-page">
-                <article class="details-card">
+                <article className="details-card">
 
-                    <article class="details-card-image">
+                    <article className="details-card-image">
 
-                        <div class="details-image-wrapper">
+                        <div className="details-image-wrapper">
                             <img src={publication.image}
                                 alt="art-image2" />
                         </div>
 
                     </article>
 
-                    <article class="details-card-text">
+                    <article className="details-card-text">
                         <h2>Title:<br /> <a>{publication.title}</a></h2>
-                        <h2>Description:<br /><span class="details-desc-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                        <h2>Description:<br /><span className="details-desc-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             Dolores beatae
                             magnam quas fuga, dignissimos, veritatis blanditiis quisquam debitis voluptatibus sapiente nemo
                             corrupti dolor nisi perferendis eaque perspiciatis placeat, accusantium eum.</span></h2>
 
 
-                        <div class="details-button-wrap">
-                            <LinkRouter to='/edit' class="details-edit">Edit Post</LinkRouter>
-                            <button class="details-delete" onClick={handleDelete}>Delete Post</button>
+                        <div className="details-button-wrap">
+                            <LinkRouter to='/edit' className="details-edit">Edit Post</LinkRouter>
+                            <button className="details-delete" onClick={handleDelete}>Delete Post</button>
                         </div>
 
                     </article>
 
-                    <div class="details-close-button" onClick={handleBack}>
+                    <div className="details-close-button" onClick={handleBack}>
                         <AiFillCloseCircle />
                     </div>
 
