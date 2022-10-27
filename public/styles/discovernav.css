@@ -1,0 +1,67 @@
+.discover-head-nav {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    font-size: 1rem;
+    z-index: 10;
+    top: 0;
+    position: relative;
+    transition: ease all 0.8s;
+}
+
+@media screen and (max-width: 960px) {
+    .head-nav {
+        transition: ease all 0.8s;
+    }
+}
+
+#discover-navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    z-index: 1;
+    width: 100%;
+    padding: 0 24px;
+    max-width: 1100px;
+}
+
+
+#discover-nav-logo {
+    color: #FFF;
+    justify-self: flex-start;
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#searchbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#list-item {
+    height: 80px;
+}
+
+#form-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+}
+
+.searchbar {
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 1rem;
+    width: 500px;
+
+}
