@@ -90,11 +90,10 @@ export const Navigation = ({ toggle }) => {
                     {user ?
                         <>
 
-                        {/* STYLE THE WELCOME AND LOGOUT  */}
                         
-                            <nav id="button-nav">
-                                <LinkRouter to="/profile" id="button-link">
-                                    Welcome, {user}
+                            <nav id="welcome-button-nav">
+                                <LinkRouter to="/profile" id="welcome-button-link">
+                                    Welcome, <b id='welcome-user'>{user}</b>
                                 </LinkRouter>
                             </nav>
 
