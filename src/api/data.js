@@ -16,3 +16,8 @@ export async function getPublications() {
 export async function createPost(data){
     return await api.post(host + '/data/publication', data);
 }
+
+export async function deletePublication(id) {
+    console.log(id);
+    return await api.del(host + '/data/publication/' + id);
+}

@@ -4,10 +4,11 @@ import { useParams } from "react-router-dom";
 import { Link as LinkRouter } from 'react-router-dom';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
+import { deletePublication } from '../../api/data';
 
 
 
-export const DetailsPage = ({toggle}) => {
+export const DetailsPage = () => {
 
     const navigate = useNavigate();
 
@@ -18,6 +19,12 @@ export const DetailsPage = ({toggle}) => {
     const publication = publications.find(x => x._id === postId);
 
     const handleBack = () => {
+        navigate('/discover');
+    }
+
+    const handleDelete = async () => {
+        await deletePublication(publication._id);
+
         navigate('/discover');
     }
 
@@ -46,13 +53,13 @@ export const DetailsPage = ({toggle}) => {
 
                         <div class="details-button-wrap">
                             <LinkRouter to='/edit' class="details-edit">Edit Post</LinkRouter>
-                            <button class="details-delete">Delete Post</button>
+                            <button class="details-delete" onClick={handleDelete}>Delete Post</button>
                         </div>
 
                     </article>
 
                     <div class="details-close-button" onClick={handleBack}>
-                        <AiFillCloseCircle/>
+                        <AiFillCloseCircle />
                     </div>
 
                 </article>
