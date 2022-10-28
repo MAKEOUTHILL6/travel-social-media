@@ -1,12 +1,12 @@
 .profile-background {
-    height: 1100px;
-    background-color: rebeccapurple;
+    background-color: black;
     display: flex;
     justify-content: center;
 }
 
 
 .profile-wrapper {
+    z-index: 5;
     overflow: auto;
     position: relative;
     border-radius: 4px;
@@ -78,10 +78,30 @@
     position: relative;
     top: 10px;
     margin: 0 auto;
+    transition: all ease 0.2s;
 }
 
 .profile-edit-button:hover {
     background-color: black;
+    color: white;
+}
+
+.profile-logout-button {
+    border-radius: 4px;
+    width: 140px;
+    font-size: 14px;
+    border: 2px solid black;
+    padding: 8px 22px;
+    position: relative;
+    top: 20px;
+    margin: 0 auto;
+    transition: all ease 0.2s;
+}
+
+.profile-logout-button:hover{
+    border: none;
+    background-color: red;
+    font-weight: 700;
     color: white;
 }
 
@@ -163,14 +183,14 @@
     left: 20px;
 }
 
-.see-all{
+.see-all {
     position: relative;
     top: 300px;
     left: 390px;
     color: black;
 }
 
-.see-all:hover{
+.see-all:hover {
     color: #01bf71;
 }
 
@@ -186,7 +206,7 @@
     background-color: #f8f9fa;
 }
 
-.profile-posts-wrapper{
+.profile-posts-wrapper {
     position: relative;
     width: 240px;
     height: 150px;
@@ -194,12 +214,12 @@
     margin-bottom: 20px;
 }
 
-.profile-posts-wrapper>img{
+.profile-posts-wrapper>img {
     height: 100%;
     width: 100%;
 }
 
-.profile-read-more{
+.profile-read-more {
     z-index: 2;
     position: absolute;
     left: 55px;
@@ -210,10 +230,12 @@
     font-size: 18px;
     padding: 5px 22px;
     transition: all ease 0.2s;
+    text-decoration: none;
+    color: black;
 }
 
 
-.profile-read-more:hover{
+.profile-read-more:hover {
     background-color: black;
     color: white;
 }

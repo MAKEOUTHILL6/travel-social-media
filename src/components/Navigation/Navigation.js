@@ -47,14 +47,6 @@ export const Navigation = ({ toggle }) => {
 
     }, []);
 
-
-    const handleLogout = async () => {
-        await logout();
-
-        window.location.reload(false)
-
-    }
-
     return (
         <>
             <nav className="head-nav" style={scrollNav ? { backgroundColor: '#000' } : { backgroundColor: 'transparent' }}>
@@ -98,12 +90,6 @@ export const Navigation = ({ toggle }) => {
                             <nav id="welcome-button-nav">
                                 <LinkRouter to={`/profile/${userId}`} id="welcome-button-link">
                                     Welcome, <b id='welcome-user'>{user}</b>
-                                </LinkRouter>
-                            </nav>
-
-                            <nav id="button-nav">
-                                <LinkRouter id="button-link" onClick={handleLogout}>
-                                    Logout
                                 </LinkRouter>
                             </nav>
                         </>

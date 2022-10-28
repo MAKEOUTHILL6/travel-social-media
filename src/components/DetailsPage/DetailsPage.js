@@ -36,7 +36,7 @@ export const DetailsPage = () => {
     const handleDelete = async () => {
         await deletePublication(publication._id);
 
-        navigate('/discover');
+        navigate(-1);
     }
 
 

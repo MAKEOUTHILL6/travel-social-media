@@ -5,10 +5,17 @@ import { useEffect, useState } from 'react';
 export const DiscoverNav = () => {
     const [user, setUser] = useState(null);
 
+    const [userId, setUserId] = useState(null);
+
     useEffect(() => {
         if (sessionStorage.getItem('username') != null) {
             setUser(sessionStorage.getItem('username'))
         }
+
+        if (sessionStorage.getItem('userId') != null) {
+            setUserId(sessionStorage.getItem('userId'))
+        }
+
 
     }, []);
 
@@ -30,7 +37,7 @@ export const DiscoverNav = () => {
                 {user ?
                     <>
                         <nav id="welcome-button-nav">
-                            <LinkRouter to="/profile" id="welcome-button-link">
+                            <LinkRouter to={`/profile/${userId}`} id="welcome-button-link">
                                 Welcome, <b id='welcome-user'>{user}</b>
                             </LinkRouter>
                         </nav>

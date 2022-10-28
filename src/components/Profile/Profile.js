@@ -1,7 +1,9 @@
-import { useParams } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import { useEffect, useState } from 'react';
 import { getUser } from "../../api/data";
 import { UserPosts } from "./UserPosts";
+import { Link as LinkRouter } from 'react-router-dom';
+import { logout } from "../../api/data.js";
 
 
 export const Profile = () => {
@@ -20,76 +22,99 @@ export const Profile = () => {
             })
     }, []);
 
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
+        logout();
+
+        navigate('/');
+
+    };
+
 
     return (
-        <div className="profile-background">
-            <div className="profile-wrapper">
+        <>
 
-                <div className="profile-header">
+            <nav className="head-nav" style={{ backgroundColor: 'black' }}>
 
-                    <div className="profile-img-wrapper">
-                        <img src="https://icons.veryicon.com/png/o/miscellaneous/youyinzhibo/guest.png"
-                            alt="" className="profile-img" />
+                <div id="navbar-container">
 
-                        <button className="profile-edit-button">Edit Profile</button>
-                    </div>
-
-                    <div className="profile-user-info">
-                        <h2 className="profile-user-name">Username: {user.username}</h2>
-                        <p className="profile-user-city">Location: {user.city}</p>
-                    </div>
+                    <LinkRouter to="/" id="nav-logo">TRVL</LinkRouter>
 
                 </div>
 
-                <div className="profile-body">
-                    <div className="profile-statistic-info">
-                        <div className="profile-photos">
+            </nav>
 
-                            <div>
-                                <p className="profile-statistic-count">{postCollection.length}</p>
-                                <p className="profile-statistic-type">Photos</p>
+            <div className="profile-background">
+                <div className="profile-wrapper">
+                    <div className="profile-header">
+
+                        <div className="profile-img-wrapper">
+                            <img src="https://icons.veryicon.com/png/o/miscellaneous/youyinzhibo/guest.png"
+                                alt="" className="profile-img" />
+
+                            <button className="profile-edit-button">Edit Profile</button>
+                            <button className="profile-logout-button" onClick={handleLogout}>Logout</button>
+                        </div>
+
+                        <div className="profile-user-info">
+                            <h2 className="profile-user-name">Username: {user.username}</h2>
+                            <p className="profile-user-city">Location: {user.city}</p>
+                        </div>
+
+                    </div>
+
+                    <div className="profile-body">
+                        <div className="profile-statistic-info">
+                            <div className="profile-photos">
+
+                                <div>
+                                    <p className="profile-statistic-count">{postCollection.length}</p>
+                                    <p className="profile-statistic-type">Photos</p>
+
+                                </div>
+
+                                <div>
+                                    <p className="profile-statistic-count">14</p>
+                                    <p className="profile-statistic-type">Likes</p>
+                                </div>
 
                             </div>
-
-                            <div>
-                                <p className="profile-statistic-count">14</p>
-                                <p className="profile-statistic-type">Likes</p>
-                            </div>
-
                         </div>
                     </div>
-                </div>
 
-                <h1 className="h1-about">About</h1>
+                    <h1 className="h1-about">About</h1>
 
-                <div className="profile-about">
-                    <ul className="profile-about-list">
+                    <div className="profile-about">
+                        <ul className="profile-about-list">
 
-                        <li className="profile-list-item">
-                            Web Developer
-                        </li>
+                            <li className="profile-list-item">
+                                Web Developer
+                            </li>
 
-                        <li className="profile-list-item">
-                            Lawyer
-                        </li>
+                            <li className="profile-list-item">
+                                Lawyer
+                            </li>
 
-                        <li className="profile-list-item">
-                            Wrestler
-                        </li>
+                            <li className="profile-list-item">
+                                Wrestler
+                            </li>
 
-                    </ul>
-                </div>
+                        </ul>
+                    </div>
 
-                <h1 className="h1-recent">Recent posts</h1>
+                    <h1 className="h1-recent">Recent posts</h1>
 
-                <a href="" className="see-all">See all</a>
+                    <a href="" className="see-all">See all</a>
 
-                <div className="profile-posts">
+                    <div className="profile-posts">
 
-                    {postCollection.map(x => <UserPosts key={x} publication={x} />)}
-                    
+                        {postCollection.map(x => <UserPosts key={x} publication={x} />)}
+
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
+
     )
 }

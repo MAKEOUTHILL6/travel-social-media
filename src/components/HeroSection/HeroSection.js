@@ -1,7 +1,7 @@
 import { MdArrowForward, MdArrowRight } from 'react-icons/md';
 import { Link as LinkRouter } from 'react-router-dom';
 import { useEffect, useState } from "react";
-import Video from '../../video/video.mp4'
+import Video from '../../video/video.mp4';
 
 
 export const HeroSection = () => {

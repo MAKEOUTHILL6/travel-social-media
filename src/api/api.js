@@ -87,12 +87,10 @@ export async function register(username, password, city, rePassword) {
     return result
 }
 
-export async function logout() {
-    const result = await get(settings.host + '/user/logout');
+export function logout() {
 
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('accessToken');
     sessionStorage.removeItem('userId');
 
-    return result;
 }
