@@ -28,3 +28,7 @@ export async function editPublication(id, data) {
 export async function deletePublication(id) {
     return await api.del(host + '/data/publication/' + id);
 }
+
+export async function getUser(id){
+    return await api.get(host + '/user/' + id);
+}

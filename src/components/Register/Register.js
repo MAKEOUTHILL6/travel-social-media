@@ -15,9 +15,10 @@ export const Register = () => {
 
         let username = formData.get('username').trim();
         let password = formData.get('password').trim();
+        let city = formData.get('city').trim();
         let rePassword = formData.get('rePassword').trim();
 
-        await register(username, password, rePassword);
+        await register(username, password, city, rePassword);
 
         navigate('/');
     }
@@ -42,6 +43,9 @@ export const Register = () => {
 
                         <label htmlFor="username">Username:</label>
                         <input type="text" id="username" placeholder="Username" name="username" />
+
+                        <label htmlFor="city">City:</label>
+                        <input type="text" id="city" placeholder="City" name="city" />
 
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" placeholder="*****" name="password" />

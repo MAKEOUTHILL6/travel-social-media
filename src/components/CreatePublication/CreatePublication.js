@@ -5,7 +5,6 @@ import { createPost } from "../../api/data";
 import { useEffect, useState } from 'react';
 
 
-
 export const CreatePublication = () => {
 
     const [userId, setUserId] = useState(null);
