@@ -12,7 +12,7 @@ export const DiscoverHeroSection = () => {
             .then(res => {
                 setPublications(res);
             })
-    }, [])
+    }, []);
 
     return (
         <main id="discover-main">

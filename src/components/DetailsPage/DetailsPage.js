@@ -1,10 +1,11 @@
 import PublicationContext from '../../services/PublicationContext';
-import { useContext } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { Link as LinkRouter } from 'react-router-dom';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import { deletePublication } from '../../api/data';
+import { getPublicationById } from '../../api/data';
 
 
 
@@ -12,11 +13,21 @@ export const DetailsPage = () => {
 
     const navigate = useNavigate();
 
+    const [publication, setPublication] = useState([]);
+
     const { postId } = useParams();
 
-    const { publications } = useContext(PublicationContext);
+    useEffect(() => {
+        getPublicationById(postId)
+            .then(res => {
+                setPublication(res);
+            })
+    }, [])
 
-    const publication = publications.find(x => x._id === postId);
+
+    // const { publications } = useContext(PublicationContext);
+
+    // const publication = publications.find(x => x._id === postId);
 
     const handleBack = () => {
         navigate('/discover');
