@@ -7,7 +7,7 @@ import { Discover } from './pages/Discover';
 import { CreatePublication } from './components/CreatePublication/CreatePublication';
 import { DetailsPage } from './components/DetailsPage/DetailsPage';
 import { PublicationProvider } from './services/PublicationContext';
-
+import { Profile } from './components/Profile/Profile';
 
 
 function App() {
@@ -19,10 +19,12 @@ function App() {
                     <Route path='/' element={<Home />} />
                     <Route path='/register' element={<Register />} />
                     <Route path='/login' element={<Login />} />
-                    <Route path='/create-post' element={<CreatePublication />} />
 
+                    <Route path='/create-post' element={<CreatePublication />} />
                     <Route path='/discover' element={<Discover />} />
                     <Route path='/discover/:postId' element={<DetailsPage/>} />
+
+                    <Route path='/profile/:userId' element={<Profile />} />
                 </Routes>
             </PublicationProvider>
 
