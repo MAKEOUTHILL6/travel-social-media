@@ -1,17 +1,14 @@
-import PublicationContext from '../../services/PublicationContext';
-import { useContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams } from "react-router-dom";
 import { Link as LinkRouter } from 'react-router-dom';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 import { deletePublication } from '../../api/data';
 import { getPublicationById } from '../../api/data';
-
+import { IconContext } from "react-icons/lib";
 
 
 export const DetailsPage = () => {
-
-    const navigate = useNavigate();
 
     const [publication, setPublication] = useState([]);
 
@@ -22,12 +19,31 @@ export const DetailsPage = () => {
             .then(res => {
                 setPublication(res);
             })
+    });
+
+
+    const [userId, setUserId] = useState([]);
+
+    useEffect(() => {
+        if (sessionStorage.getItem('userId')) {
+            setUserId(sessionStorage.getItem('userId'))
+        };
     }, [])
 
 
-    // const { publications } = useContext(PublicationContext);
+    const [isOwner, setIsOwner] = useState(false);
 
+    useEffect(() => {
+        if (userId === publication.ownerId) {
+            setIsOwner(true);
+        };
+    }, [userId, publication.ownerId])
+
+
+    // const { publications } = useContext(PublicationContext);
     // const publication = publications.find(x => x._id === postId);
+
+    const navigate = useNavigate();
 
     const handleBack = () => {
         navigate('/discover');
@@ -39,42 +55,46 @@ export const DetailsPage = () => {
         navigate(-1);
     }
 
-
     return (
         <>
-            <section id="details-page">
+            <IconContext.Provider value={{ color: '#fff' }}>
                 <article className="details-card">
-
-                    <article className="details-card-image">
-
-                        <div className="details-image-wrapper">
-                            <img src={publication.image}
-                                alt="art-image2" />
-                        </div>
-
-                    </article>
-
-                    <article className="details-card-text">
-                        <h2>Title:<br /> <a>{publication.title}</a></h2>
-                        <h2>Description:<br /><span className="details-desc-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Dolores beatae
-                            magnam quas fuga, dignissimos, veritatis blanditiis quisquam debitis voluptatibus sapiente nemo
-                            corrupti dolor nisi perferendis eaque perspiciatis placeat, accusantium eum.</span></h2>
-
-
-                        <div className="details-button-wrap">
-                            <LinkRouter to='/edit' className="details-edit">Edit Post</LinkRouter>
-                            <button className="details-delete" onClick={handleDelete}>Delete Post</button>
-                        </div>
-
-                    </article>
 
                     <div className="details-close-button" onClick={handleBack}>
                         <AiFillCloseCircle />
                     </div>
 
+                    <div className="details-card-header">
+
+                        <div className='details-card-title'>
+                            <h1>{publication.title}</h1>
+                        </div>
+
+                        <div className="details-image-wrapper">
+                            <img className="details-img"
+                                src={publication.image}
+                                alt="art-image2" />
+                        </div>
+                    </div>
+
+
+                    <h2 className="h2-desc">Description</h2>
+                    <div className="details-card-body">
+
+                        <div className="details-desc-wrapper">
+                            <span className="details-desc-text">{publication.description}</span>
+                        </div>
+
+                        {isOwner ? <div className="details-button-wrap">
+                            <LinkRouter to='/edit' className="details-edit">Edit Post</LinkRouter>
+                            <LinkRouter className="details-delete" onClick={handleDelete}>Delete Post</LinkRouter>
+                        </div> : false}
+
+                    </div>
+
                 </article>
-            </section>
+            </IconContext.Provider>
+
         </>
 
     )
