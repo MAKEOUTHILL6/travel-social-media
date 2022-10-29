@@ -52,19 +52,23 @@ export const Profile = () => {
                         <div className="profile-img-wrapper">
                             <img src="https://icons.veryicon.com/png/o/miscellaneous/youyinzhibo/guest.png"
                                 alt="" className="profile-img" />
-
-                            <button className="profile-edit-button">Edit Profile</button>
                             <button className="profile-logout-button" onClick={handleLogout}>Logout</button>
+
+
                         </div>
 
                         <div className="profile-user-info">
                             <h2 className="profile-user-name">Username: {user.username}</h2>
                             <p className="profile-user-city">Location: {user.city}</p>
+                            <LinkRouter to={`/profile/edit/${userId}`} className="profile-edit-button">Edit Profile</LinkRouter>
+
                         </div>
 
                     </div>
 
                     <div className="profile-body">
+
+
                         <div className="profile-statistic-info">
                             <div className="profile-photos">
 
@@ -72,11 +76,6 @@ export const Profile = () => {
                                     <p className="profile-statistic-count">{postCollection.length}</p>
                                     <p className="profile-statistic-type">Photos</p>
 
-                                </div>
-
-                                <div>
-                                    <p className="profile-statistic-count">14</p>
-                                    <p className="profile-statistic-type">Likes</p>
                                 </div>
 
                             </div>
@@ -97,15 +96,13 @@ export const Profile = () => {
                             </li>
 
                             <li className="profile-list-item">
-                                Wrestler
+                                Doctor
                             </li>
 
                         </ul>
                     </div>
 
                     <h1 className="h1-recent">Recent posts</h1>
-
-                    <a href="" className="see-all">See all</a>
 
                     <div className="profile-posts">
 

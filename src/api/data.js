@@ -32,3 +32,7 @@ export async function deletePublication(id) {
 export async function getUser(id){
     return await api.get(host + '/user/' + id);
 }
+
+export async function updateUser(id, data){
+    return await api.post(host + '/user/' + id, data);
+}

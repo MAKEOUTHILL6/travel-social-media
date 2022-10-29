@@ -71,12 +71,14 @@
 
 .profile-edit-button {
     border-radius: 4px;
+    text-decoration: none;
+    color: black;
     width: 140px;
     font-size: 14px;
     border: 2px solid black;
-    padding: 8px 22px;
+    padding: 8px 34px;
     position: relative;
-    top: 10px;
+    top: 50px;
     margin: 0 auto;
     transition: all ease 0.2s;
 }
@@ -94,6 +96,7 @@
     padding: 8px 22px;
     position: relative;
     top: 20px;
+    left: 0px;
     margin: 0 auto;
     transition: all ease 0.2s;
 }
