@@ -86,7 +86,7 @@ export const DetailsPage = () => {
                         </div>
 
                         {isOwner ? <div className="details-button-wrap">
-                            <LinkRouter to='/edit' className="details-edit">Edit Post</LinkRouter>
+                            <LinkRouter to={`/edit/${postId}`} className="details-edit">Edit Post</LinkRouter>
                             <LinkRouter className="details-delete" onClick={handleDelete}>Delete Post</LinkRouter>
                         </div> : false}
 

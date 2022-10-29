@@ -9,6 +9,7 @@ import { DetailsPage } from './components/DetailsPage/DetailsPage';
 import { PublicationProvider } from './services/PublicationContext';
 import { Profile } from './components/Profile/Profile';
 import { EditProfile } from './components/EditProfile/EditProfile';
+import { PublicationEdit } from './components/PublicationEdit/PublicationEdit';
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
                     <Route path='/create-post' element={<CreatePublication />} />
                     <Route path='/discover' element={<Discover />} />
                     <Route path='/discover/:postId' element={<DetailsPage/>} />
+                    <Route path='/edit/:postId' element={<PublicationEdit />} />
 
                     <Route path='/profile/:userId' element={<Profile />} />
                     <Route path='/profile/edit/:userId' element={<EditProfile />} />
