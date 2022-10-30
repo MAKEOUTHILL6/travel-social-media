@@ -2,7 +2,6 @@ import { FaBars } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 import { Link as LinkRouter } from 'react-router-dom';
 import { Link, animateScroll as scroll } from "react-scroll";
-import { logout } from "../../api/data.js";
 
 
 export const Navigation = ({ toggle }) => {
