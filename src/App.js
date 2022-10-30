@@ -24,7 +24,7 @@ function App() {
 
                     <Route path='/create-post' element={<CreatePublication />} />
                     <Route path='/discover' element={<Discover />} />
-                    <Route path='/discover/:postId' element={<DetailsPage/>} />
+                    <Route path='/discover/:postId' element={<DetailsPage />} />
                     <Route path='/edit/:postId' element={<PublicationEdit />} />
 
                     <Route path='/profile/:userId' element={<Profile />} />

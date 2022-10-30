@@ -17,22 +17,30 @@ export async function getPublicationById(id) {
     return await api.get(host + '/data/publication/' + id);
 }
 
+export async function getSearchedPublications(data) {
+    return await api.post(host + '/data/publication/search', data);
+}
+
+
+export async function createPost(data) {
+    return await api.post(host + '/data/publication', data);
+}
+
+
 export async function updatePublication(id, data) {
     return await api.put(host + '/data/publication/' + id, data);
 }
 
-export async function createPost(data){
-    return await api.post(host + '/data/publication', data);
-}
 
 export async function deletePublication(id) {
     return await api.del(host + '/data/publication/' + id);
 }
 
-export async function getUser(id){
+
+export async function getUser(id) {
     return await api.get(host + '/user/' + id);
 }
 
-export async function updateUser(id, data){
+export async function updateUser(id, data) {
     return await api.post(host + '/user/' + id, data);
 }

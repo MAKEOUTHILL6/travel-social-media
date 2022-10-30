@@ -2,17 +2,21 @@ import { Publication } from './Publication';
 import { useState, useEffect } from 'react';
 import { getPublications } from '../../api/data';
 
-export const DiscoverHeroSection = () => {
-
+export const DiscoverHeroSection = ({ searchedPosts }) => {
 
     const [publications, setPublications] = useState([]);
 
     useEffect(() => {
         getPublications()
             .then(res => {
-                setPublications(res);
+                if (searchedPosts.length > 0) {
+                    setPublications(searchedPosts)
+                } else {
+                    setPublications(res);
+
+                }
             })
-    }, []);
+    }, [searchedPosts]);
 
     return (
         <main id="discover-main">

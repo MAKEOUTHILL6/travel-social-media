@@ -1,8 +1,9 @@
 import { Link as LinkRouter } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { getSearchedPublications } from '../../api/data';
 
 
-export const DiscoverNav = () => {
+export const DiscoverNav = ({handleSearchPosts}) => {
     const [user, setUser] = useState(null);
 
     const [userId, setUserId] = useState(null);
@@ -19,6 +20,22 @@ export const DiscoverNav = () => {
 
     }, []);
 
+
+    const handleSearch = async (e) => {
+        e.preventDefault();
+
+        let formData = new FormData(e.target);
+        let title = formData.get('search');
+
+        let data = {
+            title,
+        }
+
+        const publications = await getSearchedPublications(data);
+
+        return handleSearchPosts(publications);
+    }
+
     return (
         <nav className="discover-head-nav">
 
@@ -28,8 +45,8 @@ export const DiscoverNav = () => {
 
                 <ul id='searchbar-container'>
                     <li id='list-item'>
-                        <form action="/search" method="POST" id='form-item' >
-                            <input type="text" className="searchbar" name="search" placeholder="Search..." />
+                        <form method="POST" id='form-item' onSubmit={handleSearch}>
+                            <input type="text" className="searchbar" name="search" placeholder="Search by location title" />
                         </form>
                     </li>
                 </ul>
