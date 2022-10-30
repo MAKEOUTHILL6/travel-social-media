@@ -29,7 +29,7 @@
     .register-container-info{
         width: 400px;
         height: 540px;
-        left: 0;
+        left: 10%;
         top: 40px;
     }
 }

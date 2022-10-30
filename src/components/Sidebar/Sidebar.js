@@ -36,7 +36,7 @@ export const Sidebar = ({
                 <ul id='sidebar-menu'>
                     <li><LinkScroll className='sidebar-item' onClick={toggle} to='about'>About</LinkScroll></li>
                     <li><LinkScroll className='sidebar-item' onClick={toggle} to='services'>Services</LinkScroll></li>
-                    <li><LinkScroll className='sidebar-item' onClick={toggle} to=''>Discover</LinkScroll></li>
+                    <li><LinkRouter className='sidebar-item' onClick={toggle} to='/discover'>Discover</LinkRouter></li>
                 </ul>
 
                 {user ?
