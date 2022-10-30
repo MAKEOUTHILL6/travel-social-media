@@ -53,21 +53,21 @@ export const Profile = () => {
                             <img src="https://icons.veryicon.com/png/o/miscellaneous/youyinzhibo/guest.png"
                                 alt="" className="profile-img" />
                             <button className="profile-logout-button" onClick={handleLogout}>Logout</button>
-
+                            <LinkRouter to={`/profile/edit/${userId}`} className="profile-edit-button">Edit Profile</LinkRouter>
 
                         </div>
 
+
+
                         <div className="profile-user-info">
-                            <h2 className="profile-user-name">Username: {user.username}</h2>
+                            <h2 className="profile-user-name">{user.username}</h2>
                             <p className="profile-user-city">City: {user.city}</p>
-                            <LinkRouter to={`/profile/edit/${userId}`} className="profile-edit-button">Edit Profile</LinkRouter>
 
                         </div>
 
                     </div>
 
                     <div className="profile-body">
-
 
                         <div className="profile-statistic-info">
                             <div className="profile-photos">
@@ -80,26 +80,6 @@ export const Profile = () => {
 
                             </div>
                         </div>
-                    </div>
-
-                    <h1 className="h1-about">About</h1>
-
-                    <div className="profile-about">
-                        <ul className="profile-about-list">
-
-                            <li className="profile-list-item">
-                                Web Developer
-                            </li>
-
-                            <li className="profile-list-item">
-                                Lawyer
-                            </li>
-
-                            <li className="profile-list-item">
-                                Doctor
-                            </li>
-
-                        </ul>
                     </div>
 
                     <h1 className="h1-recent">Recent posts</h1>

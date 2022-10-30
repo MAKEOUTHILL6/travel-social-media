@@ -16,6 +16,7 @@
     width: 680px;
 }
 
+
 .profile-header {
     z-index: 2;
     position: relative;
@@ -38,6 +39,7 @@
     top: 100px;
     left: 30px;
 }
+
 
 .profile-img {
     border-radius: 2px;
@@ -73,10 +75,9 @@
     border-radius: 4px;
     text-decoration: none;
     color: black;
-    width: 140px;
     font-size: 14px;
     border: 2px solid black;
-    padding: 8px 34px;
+    padding: 8px 26px;
     position: relative;
     top: 50px;
     margin: 0 auto;
@@ -90,10 +91,9 @@
 
 .profile-logout-button {
     border-radius: 4px;
-    width: 140px;
     font-size: 14px;
     border: 2px solid black;
-    padding: 8px 22px;
+    padding: 8px 39px;
     position: relative;
     top: 20px;
     left: 0px;
@@ -101,7 +101,7 @@
     transition: all ease 0.2s;
 }
 
-.profile-logout-button:hover{
+.profile-logout-button:hover {
     border: none;
     background-color: red;
     font-weight: 700;
@@ -120,6 +120,13 @@
     height: 100%;
     position: absolute;
     right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .profile-statistic-info {
+        left: 200px;
+
+    }
 }
 
 .profile-photos {
@@ -159,42 +166,12 @@
     left: 20px;
 }
 
-
-.profile-about {
-    position: absolute;
-    width: 100%;
-    height: 13%;
-    bottom: 350px;
-    background-color: #f8f9fa;
-}
-
-.profile-about-list {
-    list-style-type: none;
-}
-
-.profile-list-item {
-    margin-left: 30px;
-    align-items: center;
-    margin-bottom: 10px;
-}
-
 .h1-recent {
     display: inline-block;
     font-weight: 100;
     position: relative;
-    top: 300px;
+    top: 200px;
     left: 20px;
-}
-
-.see-all {
-    position: relative;
-    top: 300px;
-    left: 390px;
-    color: black;
-}
-
-.see-all:hover {
-    color: #01bf71;
 }
 
 .profile-posts {
@@ -205,7 +182,7 @@
     justify-content: space-evenly;
     width: 100%;
     height: 32%;
-    bottom: 0;
+    bottom: 100px;
     background-color: #f8f9fa;
 }
 
