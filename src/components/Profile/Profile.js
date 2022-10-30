@@ -20,7 +20,7 @@ export const Profile = () => {
                 setUser(res)
                 setPostCollection(res.postCollection)
             })
-    }, []);
+    }, [userId]);
 
     const navigate = useNavigate();
 

@@ -11,7 +11,7 @@ export const UserPosts = (publicationId) => {
             .then(res => {
                 setPublication(res);
             })
-    }, []);
+    }, [publicationId.publication]);
 
     const [hover, setHover] = useState(false);
 
