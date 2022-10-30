@@ -59,7 +59,7 @@ export const Profile = () => {
 
                         <div className="profile-user-info">
                             <h2 className="profile-user-name">Username: {user.username}</h2>
-                            <p className="profile-user-city">Location: {user.city}</p>
+                            <p className="profile-user-city">City: {user.city}</p>
                             <LinkRouter to={`/profile/edit/${userId}`} className="profile-edit-button">Edit Profile</LinkRouter>
 
                         </div>
