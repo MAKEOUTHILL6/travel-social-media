@@ -10,14 +10,24 @@ body {
     height: 800px;
 }
 
-.details-card-title {
-    position: absolute;
-    z-index: 1;
-    top: 40px;
-    left: 250px;
+@media screen and (max-width: 768px) {
+    .details-card {
+        width: 300px;
+    }
 }
 
-.details-card-title>h1 {
+.details-card-title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    top: 60px;
+}
+
+
+.details-card-header>.details-card-title>h1 {
+    display: flex;
     font-size: 40px;
     color: white;
     margin: 0;
@@ -42,6 +52,13 @@ body {
 
 }
 
+@media screen and (max-width: 768px) {
+    .details-image-wrapper {
+        top: 160px;
+        left: 30px
+    }
+}
+
 .details-img {
     border-radius: 10px;
     width: 100%;
@@ -51,8 +68,14 @@ body {
 
 .h2-desc {
     position: absolute;
-    bottom: 280px;
+    bottom: 250px;
     right: 290px;
+}
+
+@media screen and (max-width: 768px) {
+    .h2-desc {
+        display: none;
+    }
 }
 
 .details-card-body {
