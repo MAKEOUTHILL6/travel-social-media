@@ -46,6 +46,12 @@
     align-items: center;
 }
 
+@media screen and (max-width: 768px){
+    #searchbar-container{
+        display: none;
+    }
+}
+
 #list-item {
     list-style-type: none;
     height: 80px;
@@ -65,4 +71,22 @@
     padding: 10px 1rem;
     width: 500px;
 
+}
+
+
+#discover-mobile-icon {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    #discover-mobile-icon {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(-100%, 60%);
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: #fff;
+    }
 }

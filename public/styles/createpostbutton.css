@@ -3,6 +3,12 @@
     align-items: center;
 }
 
+@media screen and (max-width: 768px){
+    #create-button-nav{
+        display: none;
+    }
+}
+
 #create-button-link {
     display: flex;
     border-radius: 50px;

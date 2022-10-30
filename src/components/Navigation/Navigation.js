@@ -84,8 +84,6 @@ export const Navigation = ({ toggle }) => {
 
                     {user ?
                         <>
-
-                        
                             <nav id="welcome-button-nav">
                                 <LinkRouter to={`/profile/${userId}`} id="welcome-button-link">
                                     Welcome, <b id='welcome-user'>{user}</b>

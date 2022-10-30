@@ -1,9 +1,10 @@
 import { Link as LinkRouter } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getSearchedPublications } from '../../api/data';
+import { FaBars } from 'react-icons/fa';
 
 
-export const DiscoverNav = ({handleSearchPosts}) => {
+export const DiscoverNav = ({ handleSearchPosts, toggle }) => {
     const [user, setUser] = useState(null);
 
     const [userId, setUserId] = useState(null);
@@ -42,6 +43,10 @@ export const DiscoverNav = ({handleSearchPosts}) => {
             <div id="discover-navbar-container">
 
                 <LinkRouter to="/" id="discover-nav-logo">TRVL</LinkRouter>
+
+                <div id="discover-mobile-icon" onClick={toggle}>
+                    <FaBars />
+                </div>
 
                 <ul id='searchbar-container'>
                     <li id='list-item'>

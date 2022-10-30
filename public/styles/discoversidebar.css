@@ -1,0 +1,75 @@
+#discover-sidebar-container {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: #0d0d0d;
+    display: grid;
+    align-items: center;
+    top: 0;
+    left: 0;
+    transition: 0.3s ease-in-out;
+    opacity: 0;
+    top: -100px
+}
+
+#discover-sidebar-wrapper {
+    color: #fff;
+}
+
+#sidebar-searchbar-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sidebar-list-item {
+
+    list-style-type: none;
+    height: 80px;
+}
+
+#sidebar-form-item {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.sidebar-searchbar {
+    position: absolute;
+    top: -100px;
+    right: 95px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    padding: 10px 1rem;
+    width: 320px;
+}
+
+.discover-sidebar-button-wrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.discover-sidebar-button {
+    position: absolute;
+    top: -100px;
+    border-radius: 50px;
+    background-color: #01bf71;
+    white-space: nowrap;
+    padding: 14px 47px;
+    color: #010606;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+}
+
+.discover-sidebar-button:hover{
+    background-color: white;
+    color: black;
+}
