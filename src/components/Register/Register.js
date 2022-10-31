@@ -3,8 +3,11 @@ import Video from '../../video/video.mp4';
 import { useNavigate } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom';
 import { AuthNav } from '../AuthNav/AuthNav.js';
+import { useState } from 'react';
 
 export const Register = () => {
+
+    const [error, setError] = useState(null)
 
     const navigate = useNavigate();
 
@@ -18,9 +21,13 @@ export const Register = () => {
         let city = formData.get('city').trim();
         let rePassword = formData.get('rePassword').trim();
 
-        await register(username, password, city, rePassword);
+        try {
+            await register(username, password, city, rePassword);
+            navigate('/');
 
-        navigate('/');
+        } catch (error) {
+            setError(error.message)
+        }
     }
 
     return (
@@ -39,7 +46,14 @@ export const Register = () => {
                     <form method="POST" className="container-text" onSubmit={handleRegister} >
 
                         <h2>Register</h2>
-                        <p>Register to join a community full of explorers.</p>
+                        {error ?
+
+                            <div className='error-div'>
+                                <p className='error'>{error}</p>
+                            </div>
+                            :
+                            <p>Register to join a community full of explorers.</p>
+                        }
 
                         <label htmlFor="username">Username:</label>
                         <input type="text" id="username" placeholder="Username" name="username" />

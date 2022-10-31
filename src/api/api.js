@@ -85,6 +85,7 @@ export async function register(username, password, city, rePassword) {
     sessionStorage.setItem('userId', result._id);
 
     return result
+
 }
 
 export function logout() {

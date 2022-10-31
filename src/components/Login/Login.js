@@ -3,9 +3,13 @@ import { login } from '../../api/data.js';
 import Video from '../../video/video.mp4';
 import { Link as LinkRouter } from 'react-router-dom';
 import { AuthNav } from '../AuthNav/AuthNav.js';
+import { useState } from 'react';
 
 
 export const Login = () => {
+
+    const [error, setError] = useState(null)
+
 
     const navigate = useNavigate();
 
@@ -17,16 +21,21 @@ export const Login = () => {
         const username = formData.get('username').trim();
         const password = formData.get('password').trim();
 
-        await login(username, password);
+        try {
+            await login(username, password);
+            navigate('/');
+        } catch (error) {
+            setError(error.message)
+        }
 
-        navigate('/');
+
     }
 
 
     return (
         <>
             <AuthNav />
-            
+
             <section id="login-container">
 
                 <div id="hero-video-container">
@@ -38,7 +47,15 @@ export const Login = () => {
                     <form method="POST" className="login-container-text" onSubmit={handleLogin}>
 
                         <h2>Login</h2>
-                        <p>Welcome, see the new masterpieces!</p>
+
+                        {error ?
+
+                            <div className='error-div'>
+                                <p className='error'>{error}</p>
+                            </div>
+                            :
+                            <p>Welcome, see the new masterpieces!</p>
+                        }
 
                         <label htmlFor="username">Username:</label>
                         <input type="text" id="username" placeholder="Username" name="username" />

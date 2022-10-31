@@ -1,0 +1,13 @@
+.error-div{
+    background-color: rgb(238, 155, 155);
+    border: 1px solid rgb(228, 97, 97);
+    border-radius: 3px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.error{
+    padding: 5px 15px;
+    color: black;
+    font-size: 15px;
+}
