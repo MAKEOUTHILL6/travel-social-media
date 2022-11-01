@@ -23,12 +23,15 @@ export const Register = () => {
 
         try {
             await register(username, password, city, rePassword);
+
             navigate('/');
 
         } catch (error) {
             setError(error.message)
         }
+
     }
+
 
     return (
 
@@ -46,6 +49,7 @@ export const Register = () => {
                     <form method="POST" className="container-text" onSubmit={handleRegister} >
 
                         <h2>Register</h2>
+
                         {error ?
 
                             <div className='error-div'>
@@ -74,7 +78,6 @@ export const Register = () => {
                         </div>
 
                     </form>
-
                 </div>
             </section>
         </>

@@ -21,6 +21,10 @@ export async function getSearchedPublications(data) {
     return await api.post(host + '/data/publication/search', data);
 }
 
+export async function getProfileImage(data){
+    console.log(data);
+    return await api.post(host + '/user/upload', data);
+}
 
 export async function createPost(data) {
     return await api.post(host + '/data/publication', data);
