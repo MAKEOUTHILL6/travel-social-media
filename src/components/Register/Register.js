@@ -4,12 +4,22 @@ import { useNavigate } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom';
 import { AuthNav } from '../AuthNav/AuthNav.js';
 import { useState } from 'react';
+import axios from 'axios';
 
 export const Register = () => {
 
     const [error, setError] = useState(null)
 
+    const [pic, setPic] = useState([]);
+
+    const handleChange = (e) => {
+        setPic(e.target.files[0]);
+    }
+
     const navigate = useNavigate();
+
+    const token = sessionStorage.getItem('authToken');
+
 
     const handleRegister = async (e) => {
         e.preventDefault()
@@ -21,8 +31,15 @@ export const Register = () => {
         let city = formData.get('city').trim();
         let rePassword = formData.get('rePassword').trim();
 
+        let data = {
+            username,
+            password,
+            city,
+            rePassword
+        }
+
         try {
-            await register(username, password, city, rePassword);
+            await register(data);
 
             navigate('/');
 
@@ -30,6 +47,20 @@ export const Register = () => {
             setError(error.message)
         }
 
+    }
+
+    const handleImage = async (e) => {
+        e.preventDefault();
+
+        let formData = new FormData(e.target);
+
+        axios.post('http://localhost:3030/user/upload', formData, {
+                headers: {
+                    'Authorization': token
+                }
+            }).then(res => {
+                console.log(res);
+            })
     }
 
 
@@ -46,7 +77,7 @@ export const Register = () => {
 
                 <div className="register-container-info">
 
-                    <form method="POST" className="container-text" onSubmit={handleRegister} >
+                    <form method="POST" className="container-text" onSubmit={handleRegister}>
 
                         <h2>Register</h2>
 
@@ -65,6 +96,9 @@ export const Register = () => {
                         <label htmlFor="city">City:</label>
                         <input type="text" id="city" placeholder="City" name="city" />
 
+                        {/* <label htmlFor="profileImage">Profile Image:</label>
+                        <input type="file" id="profileImage" name="profileImage" onChange={handleChange} /> */}
+
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" placeholder="*****" name="password" />
 
@@ -78,6 +112,15 @@ export const Register = () => {
                         </div>
 
                     </form>
+
+
+                    <form onSubmit={handleImage}>
+                        <label htmlFor="profileImage">Profile Image:</label>
+                        <input type="file" id="profileImage" name="profileImage" onChange={handleChange} />
+
+                        <button type="submit" className="register-btn">Register</button>
+                    </form>
+
                 </div>
             </section>
         </>

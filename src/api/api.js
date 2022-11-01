@@ -77,9 +77,10 @@ export async function login(username, password) {
     return result;
 };
 
-export async function register(username, password, city, rePassword) {
 
-    const result = await post(settings.host + '/user/register', { username, password, city, rePassword });
+export async function register(data) {
+
+    const result = await post(settings.host + '/user/register', { data });
 
 
     sessionStorage.setItem('username', result.username);
