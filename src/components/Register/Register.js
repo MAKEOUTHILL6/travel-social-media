@@ -55,12 +55,12 @@ export const Register = () => {
         let formData = new FormData(e.target);
 
         axios.post('http://localhost:3030/user/upload', formData, {
-                headers: {
-                    'Authorization': token
-                }
-            }).then(res => {
-                console.log(res);
-            })
+            headers: {
+                'Authorization': token
+            }
+        }).then(res => {
+            console.log(res);
+        })
     }
 
 
@@ -91,10 +91,10 @@ export const Register = () => {
                         }
 
                         <label htmlFor="username">Username:</label>
-                        <input type="text" id="username" placeholder="Username" name="username" />
+                        <input type="text" id="username" placeholder="Username" className='username-input' name="username" />
 
                         <label htmlFor="city">City:</label>
-                        <input type="text" id="city" placeholder="City" name="city" />
+                        <input type="text" id="city" placeholder="City" name="city"/>
 
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" placeholder="*****" name="password" />
@@ -110,12 +110,11 @@ export const Register = () => {
 
                     </form>
 
-
-                    <form onSubmit={handleImage}>
-                        <label htmlFor="profileImage">Profile Image:</label>
+                    <form onSubmit={handleImage} className="image-form">
+                        <label htmlFor="profileImage">Profile Image:</label> <br />
                         <input type="file" id="profileImage" name="profileImage" onChange={handleChange} />
 
-                        <button type="submit" className="register-btn">Register</button>
+                        <button type="submit" className="upload-btn">Upload</button>
                     </form>
 
                 </div>
