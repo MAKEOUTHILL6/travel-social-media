@@ -3,6 +3,9 @@ import Video from '../../video/video.mp4';
 import { useNavigate } from 'react-router-dom';
 import { createPost } from "../../api/data";
 import { useEffect, useState } from 'react';
+import { FcCheckmark } from 'react-icons/fc';
+import axios from 'axios';
+
 
 
 export const CreatePublication = () => {
@@ -30,15 +33,15 @@ export const CreatePublication = () => {
         const formData = new FormData(e.target)
 
         const title = formData.get('title').trim();
-        const image = formData.get('image').trim();
+        // const image = formData.get('image').trim();
         const location = formData.get('location').trim();
         const description = formData.get('description').trim();
         const ownerId = userId;
         const user = username
-        
+
         const data = {
             title,
-            image,
+            // image,
             location,
             description,
             ownerId,
@@ -49,6 +52,34 @@ export const CreatePublication = () => {
 
         navigate('/discover');
 
+    }
+
+    const [pic, setPic] = useState([]);
+
+    const handleChange = (e) => {
+        setPic(e.target.files[0]);
+    }
+
+    const token = sessionStorage.getItem('authToken');
+
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    }
+
+    const handleImage = async (e) => {
+        e.preventDefault();
+
+        let formData = new FormData(e.target);
+
+        axios.post('http://localhost:3030/data/publication/upload', formData, {
+            headers: {
+                'Authorization': token
+            }
+        }).then(res => {
+            console.log(res);
+        })
     }
 
     return (
@@ -72,8 +103,8 @@ export const CreatePublication = () => {
                         <label htmlFor="title">Title:</label>
                         <input type="text" id="title" placeholder="Location name" name="title" />
 
-                        <label htmlFor="image">Image:</label>
-                        <input type="text" id="image" placeholder="http/https" name="image" />
+                        {/* <label htmlFor="image">Image:</label>
+                        <input type="text" id="image" placeholder="http/https" name="image" /> */}
 
                         <label htmlFor="location">Location:</label>
                         <select type="text" id="location" placeholder="Enter location" name="location">
@@ -89,6 +120,14 @@ export const CreatePublication = () => {
 
                         <button type="submit" className="post-button">Create Post</button>
 
+                    </form>
+
+
+                    <form onSubmit={handleImage} className="image-form">
+                        <label htmlFor="postImage">Profile Image:</label> <br />
+                        <input type="file" id="postImage" name="postImage" onChange={handleChange} />
+
+                        <button type="submit" className="upload-btn" onClick={handleClick}>{isClicked ? <FcCheckmark /> : 'Upload'}</button>
                     </form>
 
                 </div>

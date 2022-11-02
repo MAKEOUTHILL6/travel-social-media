@@ -21,7 +21,8 @@ export const UserPosts = (publicationId) => {
 
     return (
         <article className="profile-posts-wrapper" onMouseEnter={onHover} onMouseLeave={onHover}>
-            <img src={publication.image} alt="image" />
+            {publication.postImage && <img src={`http://localhost:3030/data/publication/image/${publication.postImage}`}
+                alt="regular version" className="publication-image" />}
 
             <Link to={`/discover/${publication._id}`} className="profile-read-more" style={hover ? { display: 'block' } : { display: 'none' }}>Read More</Link>
         </article>

@@ -6,9 +6,8 @@ export const Publication = ({ publication }) => {
     return (
         <article className="publication-wrapper">
 
-            <img className="publication-image"
-                src={publication.image}
-                alt="pic" />
+            {publication.postImage && <img src={`http://localhost:3030/data/publication/image/${publication.postImage}`}
+                alt="regular version" className="publication-image" />}
 
             <ul className="location-list">
                 <li className="location-tag">{publication.location}</li>
