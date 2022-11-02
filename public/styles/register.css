@@ -28,7 +28,7 @@
 @media screen and (max-width: 768px) {
     .register-container-info {
         width: 400px;
-        height: 540px;
+        height: 560px;
         left: 10%;
         top: 40px;
     }
@@ -50,11 +50,11 @@
     right: 53px;
 }
 
-@media screen and (max-width: 768px){
-    .image-form{
-        top: 153px;
+@media screen and (max-width: 768px) {
+    .image-form {
+        bottom: 102px;
         left: 43px;
-        width: 250px;
+        width: 396px;
     }
 }
 
@@ -65,8 +65,15 @@
     font-family: 'Barlow', sans-serif;
     font-weight: 700;
     position: absolute;
-    top: 30px;
+    top: 32px;
     left: 135px;
+}
+
+@media screen and (max-width: 768px) {
+    .image-form>label {
+        top: 30px;
+        left: 105px;
+    }
 }
 
 .image-form>input {
@@ -82,10 +89,10 @@
     color: #656880;
 }
 
-@media screen and (max-width: 768px){
-    .image-form>input{
+@media screen and (max-width: 768px) {
+    .image-form>input {
         padding: 9px;
-        width: 70%;
+        width: 60%;
     }
 }
 
@@ -97,13 +104,14 @@
     border: none;
     background-color: #000;
     color: #fff;
-    padding: 15px 12px;
+    width: 70px;
+    height: 50px;
     transition: background-color .3s ease-in-out;
 
 }
 
-@media screen and (max-width: 768px){
-    .upload-btn{
+@media screen and (max-width: 768px) {
+    .upload-btn {
         padding: 8px 10px;
         margin-left: 7px;
     }
@@ -115,6 +123,7 @@
 }
 
 .container-text>h2 {
+    margin-top: 4px;
     font-size: 1.6rem;
     text-align: center;
     color: #000;
@@ -217,6 +226,7 @@ span {
     text-align: center;
     font-size: .875rem;
     margin-top: 4px;
+    margin-bottom: 10px;
     color: #000;
 }
 

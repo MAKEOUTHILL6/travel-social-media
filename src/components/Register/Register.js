@@ -1,4 +1,5 @@
 import { register } from '../../api/data.js';
+import { FcCheckmark } from 'react-icons/fc';
 import Video from '../../video/video.mp4';
 import { useNavigate } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom';
@@ -19,6 +20,12 @@ export const Register = () => {
     const navigate = useNavigate();
 
     const token = sessionStorage.getItem('authToken');
+
+    const [isClicked, setIsClicked] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+    }
 
 
     const handleRegister = async (e) => {
@@ -112,9 +119,9 @@ export const Register = () => {
 
                     <form onSubmit={handleImage} className="image-form">
                         <label htmlFor="profileImage">Profile Image:</label> <br />
-                        <input type="file" id="profileImage" name="profileImage" onChange={handleChange} />
+                        <input type="file" id="profileImage" name="profileImage" onChange={handleChange}  />
 
-                        <button type="submit" className="upload-btn">Upload</button>
+                        <button type="submit" className="upload-btn" onClick={handleClick}>{isClicked ? <FcCheckmark />: 'Upload'}</button>
                     </form>
 
                 </div>
