@@ -58,10 +58,8 @@ export const Profile = () => {
 
                         <div className="profile-img-wrapper">
 
-
-                            <img src={`http://localhost:3030/user/image/${imageId}`}
-                                alt="regular version" className="profile-img" />
-
+                            {imageId && <img src={`http://localhost:3030/user/image/${imageId}`}
+                                alt="regular version" className="profile-img" />}
 
                             <button className="profile-logout-button" onClick={handleLogout}>Logout</button>
                             <LinkRouter to={`/profile/edit/${userId}`} className="profile-edit-button">Edit Profile</LinkRouter>
