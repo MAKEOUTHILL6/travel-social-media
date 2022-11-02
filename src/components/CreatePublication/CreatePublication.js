@@ -87,13 +87,13 @@ export const CreatePublication = () => {
         <>
             <AuthNav />
 
-            <section id="register-container">
+            <section id="createPost-container">
 
                 <div id="hero-video-container">
                     <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
                 </div>
 
-                <div className="register-container-info">
+                <div className="createPost-container-info">
 
                     <form method="POST" className="container-text" onSubmit={handleCreatePost} >
 
@@ -102,9 +102,6 @@ export const CreatePublication = () => {
 
                         <label htmlFor="title">Title:</label>
                         <input type="text" id="title" placeholder="Location name" name="title" />
-
-                        {/* <label htmlFor="image">Image:</label>
-                        <input type="text" id="image" placeholder="http/https" name="image" /> */}
 
                         <label htmlFor="location">Location:</label>
                         <select type="text" id="location" placeholder="Enter location" name="location">
@@ -118,12 +115,12 @@ export const CreatePublication = () => {
                         <label htmlFor="description">Description:</label>
                         <textarea type="textarea" id="description" placeholder="Minimum 20 characters" name="description" />
 
-                        <button type="submit" className="post-button">Create Post</button>
+                        <button type="submit" className="createPost-button">Create Post</button>
 
                     </form>
 
 
-                    <form onSubmit={handleImage} className="image-form">
+                    <form onSubmit={handleImage} className="createImage-form">
                         <label htmlFor="postImage">Profile Image:</label> <br />
                         <input type="file" id="postImage" name="postImage" onChange={handleChange} />
 

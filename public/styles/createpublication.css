@@ -1,0 +1,113 @@
+#createPost-container {
+    box-shadow: 0px 0px 10px 2px rgb(111, 44, 122);
+    padding-top: 30px;
+    padding-bottom: 20px;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    #createPost-container {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+}
+
+.createPost-container-info {
+    background-color: rgba(255, 255, 255, 0.15);
+    width: 600px;
+    height: 590px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.5;
+    left: 28%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
+}
+
+@media screen and (max-width: 768px) {
+    .createPost-container-info {
+        width: 400px;
+        height: 560px;
+        left: 10%;
+        top: 40px;
+    }
+}
+
+.createPost-button {
+    background-color: black;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 90px;
+    transition: background-color .3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .createPost-button {
+        width: 70px;
+        height: 40px;
+        margin-left: 7px;
+    }
+}
+
+.createPost-button:hover {
+    background-color: white;
+    color: black;
+}
+
+.createImage-form {
+    position: absolute;
+    bottom: 90px;
+    right: 53px;
+}
+
+@media screen and (max-width: 768px) {
+    .createImage-form {
+        bottom: 102px;
+        left: 43px;
+        width: 396px;
+    }
+}
+
+.createImage-form>label {
+    color: #000;
+    transform: translateY(-1.5rem);
+    font-size: 14px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+    position: absolute;
+    top: 32px;
+    left: 135px;
+}
+
+@media screen and (max-width: 768px) {
+    .createImage-form>label {
+        top: 30px;
+        left: 105px;
+    }
+}
+
+.createImage-form>input {
+    background-color: #fff;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    border: none;
+    padding: 12px;
+    border-radius: 3px;
+    border: 2px solid #01bf71;
+    margin: 3px 0 7px;
+    font-size: 0.8rem;
+    color: #656880;
+}
+
+@media screen and (max-width: 768px) {
+    .createImage-form>input {
+        padding: 9px;
+        width: 60%;
+    }
+}
