@@ -70,7 +70,7 @@ export const PublicationEdit = () => {
                         <label htmlFor="description">Description:</label>
                         <textarea type="password" id="description" defaultValue={publication.description} name="description" />
 
-                        <button type="submit" className="register-btn">Edit Post</button>
+                        <button type="submit" className="post-button">Edit Post</button>
 
                     </form>
 

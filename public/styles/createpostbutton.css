@@ -3,8 +3,8 @@
     align-items: center;
 }
 
-@media screen and (max-width: 768px){
-    #create-button-nav{
+@media screen and (max-width: 768px) {
+    #create-button-nav {
         display: none;
     }
 }
@@ -29,4 +29,17 @@
 #create-button-link:hover {
     color: white;
     background-color: rgba(255, 255, 255, 0.15);
+}
+
+
+.post-button {
+    background-color: black;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    transition: background-color .3s ease-in-out;
 }

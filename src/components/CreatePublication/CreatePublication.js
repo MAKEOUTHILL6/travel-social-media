@@ -85,9 +85,9 @@ export const CreatePublication = () => {
 
 
                         <label htmlFor="description">Description:</label>
-                        <textarea type="textarea" id="description" placeholder="Optional" name="description" />
+                        <textarea type="textarea" id="description" placeholder="Minimum 20 characters" name="description" />
 
-                        <button type="submit" className="register-btn">Create Post</button>
+                        <button type="submit" className="post-button">Create Post</button>
 
                     </form>
 

@@ -110,6 +110,13 @@
     left: 560px
 }
 
+@media screen and (max-width: 768px){
+    .no-posts{
+        position: absolute;
+        left: 130px;
+    }
+}
+
 .location-user-wrapper {
     width: 150px;
 }
