@@ -12,6 +12,13 @@ export const Profile = () => {
 
     const [user, setUser] = useState([]);
 
+    const [imageId, setImageId] = useState(null);
+
+    useEffect(() => {
+        setImageId(sessionStorage.getItem('imageId'));
+    }, []);
+
+
     const [postCollection, setPostCollection] = useState([]);
 
     useEffect(() => {
@@ -50,8 +57,12 @@ export const Profile = () => {
                     <div className="profile-header">
 
                         <div className="profile-img-wrapper">
-                            <img src="https://icons.veryicon.com/png/o/miscellaneous/youyinzhibo/guest.png"
-                                alt="" className="profile-img" />
+
+
+                            <img src={`http://localhost:3030/user/image/${imageId}`}
+                                alt="regular version" className="profile-img" />
+
+
                             <button className="profile-logout-button" onClick={handleLogout}>Logout</button>
                             <LinkRouter to={`/profile/edit/${userId}`} className="profile-edit-button">Edit Profile</LinkRouter>
 

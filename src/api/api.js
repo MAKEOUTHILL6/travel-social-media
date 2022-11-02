@@ -73,6 +73,7 @@ export async function login(username, password) {
     sessionStorage.setItem('username', result.username);
     sessionStorage.setItem('accessToken', result.accessToken);
     sessionStorage.setItem('userId', result._id);
+    sessionStorage.setItem('imageId', result.imageId);
 
     return result;
 };
@@ -86,6 +87,7 @@ export async function register(data) {
     sessionStorage.setItem('username', result.username);
     sessionStorage.setItem('accessToken', result.accessToken);
     sessionStorage.setItem('userId', result._id);
+    sessionStorage.setItem('imageId', result.imageId);
 
     return result
 
@@ -96,5 +98,6 @@ export function logout() {
     sessionStorage.removeItem('username');
     sessionStorage.removeItem('accessToken');
     sessionStorage.removeItem('userId');
+    sessionStorage.removeItem('imageId');
 
 }

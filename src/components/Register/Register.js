@@ -96,9 +96,6 @@ export const Register = () => {
                         <label htmlFor="city">City:</label>
                         <input type="text" id="city" placeholder="City" name="city" />
 
-                        {/* <label htmlFor="profileImage">Profile Image:</label>
-                        <input type="file" id="profileImage" name="profileImage" onChange={handleChange} /> */}
-
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" placeholder="*****" name="password" />
 
