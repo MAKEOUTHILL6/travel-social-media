@@ -11,7 +11,7 @@ export const Register = () => {
 
     const [error, setError] = useState(null)
 
-    const [pic, setPic] = useState([]);
+    const [pic, setPic] = useState({});
 
     const handleChange = (e) => {
         setPic(e.target.files[0]);
@@ -46,9 +46,15 @@ export const Register = () => {
         }
 
         try {
-            await register(data);
+            if ('name' in pic) {
+                await register(data);
+                navigate('/');
 
-            navigate('/');
+            } else {
+                throw {
+                    message: 'Image field is neccessary'
+                }
+            }
 
         } catch (error) {
             setError(error.message)
@@ -101,7 +107,7 @@ export const Register = () => {
                         <input type="text" id="username" placeholder="Username" className='username-input' name="username" />
 
                         <label htmlFor="city">City:</label>
-                        <input type="text" id="city" placeholder="City" name="city"/>
+                        <input type="text" id="city" placeholder="City" name="city" />
 
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" placeholder="*****" name="password" />
@@ -119,9 +125,9 @@ export const Register = () => {
 
                     <form onSubmit={handleImage} className="image-form">
                         <label htmlFor="profileImage">Profile Image:</label> <br />
-                        <input type="file" id="profileImage" name="profileImage" onChange={handleChange}  />
+                        <input type="file" id="profileImage" name="profileImage" onChange={handleChange} />
 
-                        <button type="submit" className="upload-btn" onClick={handleClick}>{isClicked ? <FcCheckmark />: 'Upload'}</button>
+                        <button type="submit" className="upload-btn" onClick={handleClick}>{isClicked ? <FcCheckmark /> : 'Upload'}</button>
                     </form>
 
                 </div>
