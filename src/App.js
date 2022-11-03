@@ -10,19 +10,40 @@ import { PublicationProvider } from './services/PublicationContext';
 import { Profile } from './components/Profile/Profile';
 import { EditProfile } from './components/EditProfile/EditProfile';
 import { PublicationEdit } from './components/PublicationEdit/PublicationEdit';
-
+import { useEffect, useState } from 'react';
+import { ProtectedAuth, ProtectedPost } from './services/Protected';
 
 function App() {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        if (sessionStorage.getItem('userId')) {
+            setIsLoggedIn(true);
+        }
+    }, []);
 
     return (
         <div>
             <PublicationProvider>
                 <Routes>
                     <Route path='/' element={<Home />} />
-                    <Route path='/register' element={<Register />} />
-                    <Route path='/login' element={<Login />} />
+                    <Route path='/register' element={
+                        <ProtectedAuth isLoggedIn={isLoggedIn} >
+                            <Register />
+                        </ProtectedAuth>
+                    } />
+                    <Route path='/login' element={
+                        <ProtectedAuth isLoggedIn={isLoggedIn} >
+                            <Login />
+                        </ProtectedAuth>
+                    } />
 
-                    <Route path='/create-post' element={<CreatePublication />} />
+                    <Route path='/create-post' element={
+                        <ProtectedPost>
+                            <CreatePublication isLoggedIn={isLoggedIn} />
+                        </ProtectedPost>
+                    } />
                     <Route path='/discover' element={<Discover />} />
                     <Route path='/discover/:postId' element={<DetailsPage />} />
                     <Route path='/edit/:postId' element={<PublicationEdit />} />
