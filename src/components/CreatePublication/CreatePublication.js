@@ -10,6 +10,8 @@ import axios from 'axios';
 
 export const CreatePublication = () => {
 
+    const [error, setError] = useState(null)
+
     const [userId, setUserId] = useState(null);
 
     const [username, setUser] = useState(null);
@@ -41,16 +43,25 @@ export const CreatePublication = () => {
 
         const data = {
             title,
-            // image,
             location,
             description,
             ownerId,
             user,
         };
 
-        await createPost(data)
+        try {
+            if ('name' in pic) {
+                await createPost(data)
+                navigate('/discover');
+            } else {
+                throw {
+                    message: 'Image field is required!'
+                }
+            }
 
-        navigate('/discover');
+        } catch (error) {
+            setError(error.message)
+        }
 
     }
 
@@ -98,7 +109,15 @@ export const CreatePublication = () => {
                     <form method="POST" className="container-text" onSubmit={handleCreatePost} >
 
                         <h2>Create Publication</h2>
-                        <p>Share your experience with the world.</p>
+
+                        {error ?
+
+                            <div className='error-div'>
+                                <p className='error'>{error}</p>
+                            </div>
+                            :
+                            <p>Share your experience with the world.</p>
+                        }
 
                         <label htmlFor="title">Title:</label>
                         <input type="text" id="title" placeholder="Location name" name="title" />
@@ -113,7 +132,7 @@ export const CreatePublication = () => {
 
 
                         <label htmlFor="description">Description:</label>
-                        <textarea type="textarea" id="description" placeholder="Minimum 20 characters" name="description" />
+                        <textarea type="textarea" id="description" placeholder="Minimum 10 characters" name="description" />
 
                         <button type="submit" className="createPost-button">Create Post</button>
 

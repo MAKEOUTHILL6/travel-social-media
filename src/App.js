@@ -23,11 +23,13 @@ function App() {
         }
     }, []);
 
+
     return (
         <div>
             <PublicationProvider>
                 <Routes>
                     <Route path='/' element={<Home />} />
+
                     <Route path='/register' element={
                         <ProtectedAuth isLoggedIn={isLoggedIn} >
                             <Register />
@@ -40,16 +42,19 @@ function App() {
                     } />
 
                     <Route path='/create-post' element={
-                        <ProtectedPost>
-                            <CreatePublication isLoggedIn={isLoggedIn} />
+                        <ProtectedPost isLoggedIn={isLoggedIn} >
+                            <CreatePublication />
                         </ProtectedPost>
                     } />
+
                     <Route path='/discover' element={<Discover />} />
+
                     <Route path='/discover/:postId' element={<DetailsPage />} />
                     <Route path='/edit/:postId' element={<PublicationEdit />} />
 
                     <Route path='/profile/:userId' element={<Profile />} />
                     <Route path='/profile/edit/:userId' element={<EditProfile />} />
+                    
                 </Routes>
             </PublicationProvider>
         </div>
