@@ -22,7 +22,7 @@ export const AboutSection = () => {
                         <div id="col1">
                             <div id="text-wrapper">
                                 <p id="topline">Premium Travelling</p>
-                                <h1 id="heading">Communicate with friends throught your adventures!</h1>
+                                <h1 id="heading">Communicate with friends throughout your adventures!</h1>
 
                                 {user ?
                                     <>

@@ -61,11 +61,8 @@ export const PublicationEdit = () => {
                         <label htmlFor="title">Title:</label>
                         <input type="text" id="title" defaultValue={publication.title} name="title" />
 
-                        <label htmlFor="image">Image:</label>
-                        <input type="text" id="image" defaultValue={publication.image} name="image" />
-
                         <label htmlFor="location">Location:</label>
-                        <input type="password" id="location" defaultValue={publication.location} name="location" />
+                        <input type="text" id="location" defaultValue={publication.location} name="location" />
 
                         <label htmlFor="description">Description:</label>
                         <textarea type="password" id="description" defaultValue={publication.description} name="description" />

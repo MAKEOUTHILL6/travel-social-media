@@ -28,7 +28,7 @@ export const ServicesSection = () => {
                     <div className="services-card">
                         <img src={Icon2} alt='car' className="services-icon" />
                         <h2 className='services-h2'>The Adventurers Media</h2>
-                        <p className='services-p'>Share your experiences with TRVL!</p>
+                        <p className='services-p'>Share your experience with TRVL!</p>
                     </div>
 
                 </div>

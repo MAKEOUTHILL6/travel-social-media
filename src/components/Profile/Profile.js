@@ -6,7 +6,7 @@ import { Link as LinkRouter } from 'react-router-dom';
 import { logout } from "../../api/data.js";
 
 
-export const Profile = () => {
+export const Profile = ({ updateUserRoute }) => {
 
     const { userId } = useParams();
 
@@ -33,7 +33,7 @@ export const Profile = () => {
 
     const handleLogout = () => {
         logout();
-
+        updateUserRoute(null);
         navigate('/');
 
     };

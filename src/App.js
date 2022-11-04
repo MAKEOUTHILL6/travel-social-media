@@ -15,13 +15,17 @@ import { ProtectedAuth, ProtectedPost } from './services/Protected';
 
 function App() {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(null);
+
+    const updateUserRoute = (isLoggedIn) => {
+        setIsLoggedIn(isLoggedIn);
+    }
 
     useEffect(() => {
-        if (sessionStorage.getItem('userId')) {
-            setIsLoggedIn(true);
+        if (sessionStorage.getItem('username')) {
+            setIsLoggedIn(sessionStorage.getItem('username'));
         }
-    }, []);
+    }, [isLoggedIn]);
 
 
     return (
@@ -32,12 +36,12 @@ function App() {
 
                     <Route path='/register' element={
                         <ProtectedAuth isLoggedIn={isLoggedIn} >
-                            <Register />
+                            <Register updateUserRoute={updateUserRoute} />
                         </ProtectedAuth>
                     } />
                     <Route path='/login' element={
                         <ProtectedAuth isLoggedIn={isLoggedIn} >
-                            <Login />
+                            <Login updateUserRoute={updateUserRoute} />
                         </ProtectedAuth>
                     } />
 
@@ -52,9 +56,9 @@ function App() {
                     <Route path='/discover/:postId' element={<DetailsPage />} />
                     <Route path='/edit/:postId' element={<PublicationEdit />} />
 
-                    <Route path='/profile/:userId' element={<Profile />} />
+                    <Route path='/profile/:userId' element={<Profile updateUserRoute={updateUserRoute} />} />
                     <Route path='/profile/edit/:userId' element={<EditProfile />} />
-                    
+
                 </Routes>
             </PublicationProvider>
         </div>

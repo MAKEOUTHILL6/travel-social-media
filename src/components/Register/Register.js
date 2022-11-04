@@ -7,7 +7,7 @@ import { AuthNav } from '../AuthNav/AuthNav.js';
 import { useState } from 'react';
 import axios from 'axios';
 
-export const Register = () => {
+export const Register = ({ updateUserRoute }) => {
 
     const [error, setError] = useState(null)
 
@@ -48,6 +48,7 @@ export const Register = () => {
         try {
             if ('name' in pic) {
                 await register(data);
+                updateUserRoute(username);
                 navigate('/');
 
             } else {

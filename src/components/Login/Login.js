@@ -6,7 +6,7 @@ import { AuthNav } from '../AuthNav/AuthNav.js';
 import { useState } from 'react';
 
 
-export const Login = () => {
+export const Login = ({ updateUserRoute }) => {
 
     const [error, setError] = useState(null)
 
@@ -23,6 +23,7 @@ export const Login = () => {
 
         try {
             await login(username, password);
+            updateUserRoute(username);
             navigate('/');
         } catch (error) {
             setError(error.message)

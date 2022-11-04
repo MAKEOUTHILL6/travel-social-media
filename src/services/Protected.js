@@ -11,7 +11,7 @@ export const ProtectedAuth = ({ isLoggedIn, children }) => {
 
 
 export const ProtectedPost = ({ isLoggedIn, children }) => {
-    if (isLoggedIn === false) {
+    if (!isLoggedIn) {
         return <Navigate to='/register' replace />;
     }
     return children;

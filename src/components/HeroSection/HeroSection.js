@@ -30,7 +30,7 @@ export const HeroSection = () => {
 
             <div id="hero-content">
                 <div id="hero-h1">
-                    Travelling Made Easy
+                    Travelling Made Fun
                 </div>
 
                 {user ? <p id="hero-p">
