@@ -18,7 +18,7 @@ export const EditProfile = () => {
             .then(res => {
                 setUser(res)
             })
-    }, []);
+    }, [userId]);
 
     const handleUserEdit = async (e) => {
         e.preventDefault();
