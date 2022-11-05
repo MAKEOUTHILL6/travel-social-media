@@ -32,7 +32,7 @@ function getOptions(method = 'get', body) {
         headers: {}
     };
 
-    const token = sessionStorage.getItem('authToken');
+    const token = sessionStorage.getItem('accessToken');
 
     if (token != null) {
 
