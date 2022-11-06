@@ -47,13 +47,18 @@ export const Register = ({ updateUserRoute }) => {
         }
 
         try {
-            // await register(data);
-            // navigate('/');
 
             if ('name' in pic) {
-                await register(data);
-                updateUserRoute(username);
-                navigate('/');
+                if (isClicked) {
+                    await register(data);
+                    updateUserRoute(username);
+                    navigate('/');
+                } else {
+                    throw{
+                        message: 'Upload the photo!'
+                    }
+                }
+
 
             } else {
                 throw {
@@ -76,8 +81,6 @@ export const Register = ({ updateUserRoute }) => {
             headers: {
                 'Authorization': token
             }
-        }).then(res => {
-            console.log(res);
         })
     }
 
@@ -129,7 +132,7 @@ export const Register = ({ updateUserRoute }) => {
                     </form>
 
 
-                    
+
                     <form onSubmit={handleImage} className="image-form">
                         <label htmlFor="profileImage">Profile Image:</label> <br />
                         <input type="file" id="profileImage" name="profileImage" onChange={handleChange} />
