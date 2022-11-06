@@ -21,7 +21,7 @@ export const UserPosts = (publicationId) => {
 
     return (
         <article className="profile-posts-wrapper" onMouseEnter={onHover} onMouseLeave={onHover}>
-            {publication.postImage && <img src={`http://localhost:3030/data/publication/image/${publication.postImage}`}
+            {publication.postImage && <img src={`https://trvl-social-backend.onrender.com/data/publication/image/${publication.postImage}`}
                 alt="regular version" className="publication-image" />}
 
             <Link to={`/discover/${publication._id}`} className="profile-read-more" style={hover ? { display: 'block' } : { display: 'none' }}>Read More</Link>

@@ -58,7 +58,7 @@ export const Profile = ({ updateUserRoute }) => {
 
                         <div className="profile-img-wrapper">
 
-                            {imageId && <img src={`http://localhost:3030/user/image/${imageId}`}
+                            {imageId && <img src={`https://trvl-social-backend.onrender.com/user/image/${imageId}`}
                                 alt="regular version" className="profile-img" />}
 
                             <button className="profile-logout-button" onClick={handleLogout}>Logout</button>

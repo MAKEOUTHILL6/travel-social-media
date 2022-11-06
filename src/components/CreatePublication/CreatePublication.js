@@ -84,7 +84,7 @@ export const CreatePublication = () => {
 
         let formData = new FormData(e.target);
 
-        axios.post('http://localhost:3030/data/publication/upload', formData, {
+        axios.post('https://trvl-social-backend.onrender.com/data/publication/upload', formData, {
             headers: {
                 'Authorization': token
             }

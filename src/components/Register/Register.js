@@ -28,10 +28,11 @@ export const Register = ({ updateUserRoute }) => {
     }
 
 
+
     const handleRegister = async (e) => {
         e.preventDefault()
 
-        let formData = new FormData(e.target)
+        let formData = new FormData(e.target);
 
         let username = formData.get('username').trim();
         let password = formData.get('password').trim();
@@ -46,6 +47,9 @@ export const Register = ({ updateUserRoute }) => {
         }
 
         try {
+            // await register(data);
+            // navigate('/');
+
             if ('name' in pic) {
                 await register(data);
                 updateUserRoute(username);
@@ -68,7 +72,7 @@ export const Register = ({ updateUserRoute }) => {
 
         let formData = new FormData(e.target);
 
-        axios.post('http://localhost:3030/user/upload', formData, {
+        axios.post('https://trvl-social-backend.onrender.com/user/upload', formData, {
             headers: {
                 'Authorization': token
             }
@@ -124,6 +128,8 @@ export const Register = ({ updateUserRoute }) => {
 
                     </form>
 
+
+                    
                     <form onSubmit={handleImage} className="image-form">
                         <label htmlFor="profileImage">Profile Image:</label> <br />
                         <input type="file" id="profileImage" name="profileImage" onChange={handleChange} />

@@ -71,7 +71,7 @@ export const DetailsPage = () => {
                         </div>
 
                         <div className="details-image-wrapper">
-                            {publication.postImage && <img src={`http://localhost:3030/data/publication/image/${publication.postImage}`}
+                            {publication.postImage && <img src={`https://trvl-social-backend.onrender.com/data/publication/image/${publication.postImage}`}
                                 alt="regular version" className="details-img" />}
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 import * as api from './api.js';
 
-const host = 'http://localhost:3030';
+const host = 'https://trvl-social-backend.onrender.com';
 api.settings.host = host;
 
 
