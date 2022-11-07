@@ -27,6 +27,24 @@ export const CreatePublication = () => {
 
     }, []);
 
+    const [isClicked, setIsClicked] = useState(false);
+
+    const [uploading, setUploading] = useState(false);
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+        setUploading(true);
+        setTimeout(() => {
+            setUploading(false);
+        }, 5000)
+    }
+
+    const [pic, setPic] = useState([]);
+
+    const handleChange = (e) => {
+        setPic(e.target.files[0]);
+    }
+
     const navigate = useNavigate();
 
     const handleCreatePost = async (e) => {
@@ -51,8 +69,14 @@ export const CreatePublication = () => {
 
         try {
             if ('name' in pic) {
-                await createPost(data)
-                navigate('/discover');
+                if (isClicked) {
+                    await createPost(data)
+                    navigate('/discover');
+                } else {
+                    throw {
+                        message: 'Upload the photo!'
+                    }
+                }
             } else {
                 throw {
                     message: 'Image field is required!'
@@ -65,19 +89,7 @@ export const CreatePublication = () => {
 
     }
 
-    const [pic, setPic] = useState([]);
-
-    const handleChange = (e) => {
-        setPic(e.target.files[0]);
-    }
-
     const token = sessionStorage.getItem('authToken');
-
-    const [isClicked, setIsClicked] = useState(false);
-
-    const handleClick = () => {
-        setIsClicked(!isClicked);
-    }
 
     const handleImage = async (e) => {
         e.preventDefault();
@@ -88,8 +100,6 @@ export const CreatePublication = () => {
             headers: {
                 'Authorization': token
             }
-        }).then(res => {
-            console.log(res);
         })
     }
 
@@ -134,7 +144,10 @@ export const CreatePublication = () => {
                         <label htmlFor="description">Description:</label>
                         <textarea type="textarea" id="description" placeholder="Minimum 10 characters" name="description" />
 
-                        <button type="submit" className="createPost-button">Create Post</button>
+
+                        {uploading ? <button disabled className="createPost-button">Loading...</button> : <button type="submit" className="createPost-button">Create Post</button>}
+
+
 
                     </form>
 

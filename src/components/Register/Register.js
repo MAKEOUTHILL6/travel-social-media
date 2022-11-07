@@ -23,8 +23,14 @@ export const Register = ({ updateUserRoute }) => {
 
     const [isClicked, setIsClicked] = useState(false);
 
+    const [uploading, setUploading] = useState(false);
+
     const handleClick = () => {
         setIsClicked(!isClicked);
+        setUploading(true);
+        setTimeout(() => {
+            setUploading(false);
+        }, 5000)
     }
 
 
@@ -123,7 +129,7 @@ export const Register = ({ updateUserRoute }) => {
                         <label htmlFor="rePassword">Repeat password:</label>
                         <input type="password" id="re-password" placeholder="*****" name="rePassword" />
 
-                        <button type="submit" className="register-btn">Register</button>
+                        {uploading ? <button className="register-btn" disabled>Loading...</button>: <button type="submit" className="register-btn">Register</button>}
 
                         <div className="card-no-account">
                             <p>Already have an account? <LinkRouter to="/login"> Sign in </LinkRouter></p>
