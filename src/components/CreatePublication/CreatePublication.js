@@ -149,6 +149,9 @@ export const CreatePublication = () => {
                             <option value='Greece'>Greece</option>
                             <option value='Spain'>Spain</option>
                             <option value='Italy'>Italy</option>
+                            <option value='Germany'>Germany</option>
+                            <option value='USA'>USA</option>
+                            <option value='United Kingdom'>United Kingdom</option>
                         </select>
 
 
@@ -164,7 +167,7 @@ export const CreatePublication = () => {
 
 
                     <form onSubmit={handleImage} className="createImage-form">
-                        <label htmlFor="postImage">Profile Image:</label> <br />
+                        <label htmlFor="postImage">Publication Image:</label> <br />
                         <input type="file" id="postImage" name="postImage" onChange={handleChange} />
 
                         <button type="submit" className="upload-btn" onClick={handleClick}>{isClicked ? <FcCheckmark /> : 'Upload'}</button>

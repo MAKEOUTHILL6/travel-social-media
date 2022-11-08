@@ -29,10 +29,29 @@
     .createPost-container-info {
         width: 400px;
         height: 560px;
-        left: 10%;
+        left: 25%;
         top: 40px;
     }
 }
+
+@media screen and (max-width: 426px) {
+    .createPost-container-info {
+        width: 380px;
+        height: 560px;
+        left: 6%;
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .createPost-container-info {
+        width: 360px;
+        height: 560px;
+        left: 2%;
+        top: 0;
+    }
+}
+
 
 .createPost-button {
     background-color: black;
@@ -69,6 +88,22 @@
         bottom: 80px;
         left: 27px;
         width: 451px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .createImage-form {
+        bottom: 80px;
+        left: 21px;
+        width: 361px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .createImage-form {
+        bottom: 80px;
+        left: 21px;
+        width: 341px;
     }
 }
 
