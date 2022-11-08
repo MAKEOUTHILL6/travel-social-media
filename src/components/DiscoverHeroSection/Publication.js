@@ -18,20 +18,19 @@ export const Publication = ({ publication }) => {
     return (
         <article className="publication-wrapper">
 
-            {loading ? <ScaleLoader color={'#01bf71'}
-                loading={loading}
-                size={200}
-                aria-label="Loading Spinner"
-                data-testid="loader"
-                className="post-loader" />
+            <div className='publication-image-container'>
+                {loading ? <ScaleLoader color={'#01bf71'}
+                    loading={loading}
+                    size={200}
+                    aria-label="Loading Spinner"
+                    data-testid="loader"
+                    className="post-loader" />
 
-                :
-                <img src={`https://trvl-social-backend.onrender.com/data/publication/image/${publication.postImage}`}
-                    alt="regular version" className="publication-image" />
-            }
-            {/* 
-            {publication.postImage && <img src={`https://trvl-social-backend.onrender.com/data/publication/image/${publication.postImage}`}
-                alt="regular version" className="publication-image" />} */}
+                    :
+                    <img src={`https://trvl-social-backend.onrender.com/data/publication/image/${publication.postImage}`}
+                        alt="regular version" className="publication-image" />
+                }
+            </div>
 
             <ul className="location-list">
                 <li className="location-tag">{publication.location}</li>
