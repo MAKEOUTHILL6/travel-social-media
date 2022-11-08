@@ -62,6 +62,7 @@ export const EditProfile = () => {
                         <input type="text" id="city" placeholder={user.city} name="city" />
 
                         <button type="submit" className="register-btn">Edit</button>
+                        <button className="register-btn">Back</button>
 
                     </form>
 

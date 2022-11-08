@@ -43,3 +43,19 @@
     margin-top: 1.2rem;
     transition: background-color .3s ease-in-out;
 }
+
+.back-button {
+    background-color: black;
+    justify-content: center;
+    text-decoration: none;
+    border-radius: 4px;
+    padding: 10px;
+    width: 200px;
+    margin: 0 auto;
+    display: flex;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 1.2rem;
+    transition: background-color .3s ease-in-out;
+}

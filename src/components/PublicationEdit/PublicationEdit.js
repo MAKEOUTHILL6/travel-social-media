@@ -2,7 +2,7 @@ import Video from '../../video/video.mp4';
 import { AuthNav } from '../AuthNav/AuthNav';
 import { getPublicationById,updatePublication } from '../../api/data';
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, NavLink } from 'react-router-dom';
 
 
 export const PublicationEdit = () => {
@@ -86,6 +86,7 @@ export const PublicationEdit = () => {
                                 <textarea type="password" id="description" defaultValue={publication.description} name="description" />
 
                                 <button type="submit" className="post-button">Edit Post</button>
+                                <NavLink to={`/discover/${publication._id}`} className="back-button">Back</NavLink>
 
                             </form>
 
