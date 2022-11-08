@@ -22,7 +22,7 @@
 @media screen and (max-width: 378px) {
     #register-container {
         padding-top: 10px;
-        padding-bottom: 5px;
+        padding-bottom: 7px;
     }
 }
 
@@ -60,7 +60,7 @@
 @media screen and (max-width: 378px) {
     .register-container-info {
         width: 300px;
-        height: 580px;
+        height: 570px;
         left: 9.2%;
         top: 2px;
     }

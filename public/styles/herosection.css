@@ -38,7 +38,11 @@
         display: none;
     }
 
-    #hero-background-container {
+    #hero-video {
+        display: none;
+    }
+
+    #hero-background-container{
         display: block;
     }
 
