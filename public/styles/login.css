@@ -22,8 +22,26 @@
     .login-container-info {
         width: 400px;
         height: 540px;
+        left: 25%;
+        top: 10px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .login-container-info {
+        width: 300px;
+        height: 540px;
+        left: 15%;
+        top: 10px;
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .login-container-info {
+        width: 300px;
+        height: 540px;
         left: 10%;
-        top: 40px;
+        top: 10px;
     }
 }
 
