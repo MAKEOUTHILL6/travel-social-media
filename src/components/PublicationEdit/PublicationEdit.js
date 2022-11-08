@@ -73,7 +73,7 @@ export const PublicationEdit = () => {
                         {displayWidth ?
 
                             <div id="hero-video-container">
-                                <img src={Image} type="video/mp4" id='hero-video'></img>
+                                <img src={Image} id='hero-video'></img>
                             </div>
                             :
                             <div id="hero-video-container">
