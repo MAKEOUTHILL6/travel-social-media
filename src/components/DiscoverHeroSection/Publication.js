@@ -1,13 +1,37 @@
 import { Link } from 'react-router-dom';
+import ScaleLoader from "react-spinners/ScaleLoader";
+import { useEffect, useState } from "react";
 
 
 export const Publication = ({ publication }) => {
 
+
+    const [loading, setLoading] = useState(false);
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 800)
+    }, []);
+
+
     return (
         <article className="publication-wrapper">
 
+            {loading ? <ScaleLoader color={'#01bf71'}
+                loading={loading}
+                size={200}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+                className="post-loader" />
+
+                :
+                <img src={`https://trvl-social-backend.onrender.com/data/publication/image/${publication.postImage}`}
+                    alt="regular version" className="publication-image" />
+            }
+            {/* 
             {publication.postImage && <img src={`https://trvl-social-backend.onrender.com/data/publication/image/${publication.postImage}`}
-                alt="regular version" className="publication-image" />}
+                alt="regular version" className="publication-image" />} */}
 
             <ul className="location-list">
                 <li className="location-tag">{publication.location}</li>

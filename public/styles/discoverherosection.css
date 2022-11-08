@@ -132,14 +132,7 @@
     color: #01bf71;
 }
 
-.scale-loader{
-    position: relative;
-    top: 200px;
-}
 
-@media screen and (max-width: 768px){
-    .scale-loader{
-        top: 300px;
-        left: 10px;
-    }
+.post-loader{
+    position: relative;
 }

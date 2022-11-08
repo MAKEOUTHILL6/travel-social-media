@@ -12,6 +12,20 @@
     }
 }
 
+@media screen and (max-width: 426px) {
+    #register-container {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    #register-container {
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+}
+
 .register-container-info {
     background-color: rgba(255, 255, 255, 0.15);
     width: 600px;
@@ -28,9 +42,27 @@
 @media screen and (max-width: 768px) {
     .register-container-info {
         width: 400px;
-        height: 560px;
-        left: 10%;
-        top: 40px;
+        height: 590px;
+        left: 27%;
+        top: 0;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .register-container-info {
+        width: 350px;
+        height: 580px;
+        left: 8%;
+        top: 2px;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    .register-container-info {
+        width: 300px;
+        height: 580px;
+        left: 9.2%;
+        top: 2px;
     }
 }
 
@@ -52,11 +84,28 @@
 
 @media screen and (max-width: 768px) {
     .image-form {
-        bottom: 102px;
+        bottom: 118px;
         left: 43px;
         width: 396px;
     }
 }
+
+@media screen and (max-width: 426px) {
+    .image-form {
+        bottom: 110px;
+        left: 21px;
+        width: 343px;
+    }
+}
+
+@media screen and (max-width: 378px) {
+    .image-form {
+        bottom: 100px;
+        left: 13px;
+        width: 327px;
+    }
+}
+
 
 .image-form>label {
     color: #000;
@@ -71,8 +120,23 @@
 
 @media screen and (max-width: 768px) {
     .image-form>label {
-        top: 30px;
+        top: 28px;
         left: 105px;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    .image-form>label {
+        top: 26px;
+        left: 112px;
+    }
+}
+
+
+@media screen and (max-width: 378px) {
+    .image-form>label {
+        top: 28px;
+        left: 98px;
     }
 }
 
@@ -237,13 +301,4 @@ span {
 .card-no-account>p>a:hover {
     color: #01bf71;
     font-weight: 500;
-}
-
-.gender {
-    margin-bottom: -1.15em;
-}
-
-.gender label:hover,
-.gender input:hover {
-    cursor: pointer;
 }
