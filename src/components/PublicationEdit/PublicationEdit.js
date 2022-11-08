@@ -1,8 +1,9 @@
 import Video from '../../video/video.mp4';
 import { AuthNav } from '../AuthNav/AuthNav';
-import { getPublicationById,updatePublication } from '../../api/data';
+import { getPublicationById, updatePublication } from '../../api/data';
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, NavLink } from 'react-router-dom';
+import Image from '../../images/image.png';
 
 
 export const PublicationEdit = () => {
@@ -68,6 +69,10 @@ export const PublicationEdit = () => {
 
                         <div id="hero-video-container">
                             <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
+                        </div>
+
+                        <div id="hero-background-container">
+                            <img alt='image' src={Image} type="video/mp4" id='hero-background-img'></img>
                         </div>
 
                         <div className="register-container-info">

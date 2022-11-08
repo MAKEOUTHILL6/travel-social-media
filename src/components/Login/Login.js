@@ -4,6 +4,7 @@ import Video from '../../video/video.mp4';
 import { Link as LinkRouter } from 'react-router-dom';
 import { AuthNav } from '../AuthNav/AuthNav.js';
 import { useState } from 'react';
+import Image from '../../images/image.png';
 
 
 export const Login = ({ updateUserRoute }) => {
@@ -41,6 +42,10 @@ export const Login = ({ updateUserRoute }) => {
 
                 <div id="hero-video-container">
                     <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
+                </div>
+
+                <div id="hero-background-container">
+                    <img alt='image' src={Image} type="video/mp4" id='hero-background-img'></img>
                 </div>
 
                 <div className="login-container-info">

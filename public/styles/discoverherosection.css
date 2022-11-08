@@ -26,17 +26,18 @@
     }
 }
 
+
 .publication-wrapper {
     margin-top: 40px;
     margin-left: 60px;
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: 340px;
     border-radius: 8px;
     border: 1.8px solid #e9eff2;
     background-color: white;
     padding: 6px;
-    height: 450px;
+    height: 480px;
     -webkit-box-shadow: -1px 16px 41px -6px rgba(0, 0, 0, 0.64);
     -moz-box-shadow: -1px 16px 41px -6px rgba(0, 0, 0, 0.64);
     box-shadow: -1px 16px 41px -6px rgba(0, 0, 0, 0.64);
@@ -50,7 +51,7 @@
 
 .publication-image {
     width: 100%;
-    height: 240px;
+    height: 270px;
     border-radius: 6px;
     margin-bottom: 10px;
 }
@@ -113,12 +114,12 @@
 @media screen and (max-width: 768px){
     .no-posts{
         position: absolute;
-        left: 130px;
+        left: 230px;
     }
 }
 
 .location-user-wrapper {
-    width: 150px;
+    width: 250px;
 }
 
 .location-user {

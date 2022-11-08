@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { createPost } from "../../api/data";
 import { useEffect, useState } from 'react';
 import { FcCheckmark } from 'react-icons/fc';
+import Image from '../../images/image.png';
 import axios from 'axios';
 
 
@@ -112,6 +113,10 @@ export const CreatePublication = () => {
 
                 <div id="hero-video-container">
                     <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
+                </div>
+
+                <div id="hero-background-container">
+                    <img alt='image' src={Image} type="video/mp4" id='hero-background-img'></img>
                 </div>
 
                 <div className="createPost-container-info">

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom';
 import { AuthNav } from '../AuthNav/AuthNav.js';
 import { useState } from 'react';
+import Image from '../../images/image.png';
 import axios from 'axios';
 
 export const Register = ({ updateUserRoute }) => {
@@ -60,7 +61,7 @@ export const Register = ({ updateUserRoute }) => {
                     updateUserRoute(username);
                     navigate('/');
                 } else {
-                    throw{
+                    throw {
                         message: 'Upload the photo!'
                     }
                 }
@@ -102,6 +103,11 @@ export const Register = ({ updateUserRoute }) => {
                     <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
                 </div>
 
+
+                <div id="hero-background-container">
+                    <img alt='image' src={Image} type="video/mp4" id='hero-background-img'></img>
+                </div>
+
                 <div className="register-container-info">
 
                     <form method="POST" className="container-text" onSubmit={handleRegister}>
@@ -129,7 +135,7 @@ export const Register = ({ updateUserRoute }) => {
                         <label htmlFor="rePassword">Repeat password:</label>
                         <input type="password" id="re-password" placeholder="*****" name="rePassword" />
 
-                        {uploading ? <button className="register-btn" disabled>Loading...</button>: <button type="submit" className="register-btn">Register</button>}
+                        {uploading ? <button className="register-btn" disabled>Loading...</button> : <button type="submit" className="register-btn">Register</button>}
 
                         <div className="card-no-account">
                             <p>Already have an account? <LinkRouter to="/login"> Sign in </LinkRouter></p>

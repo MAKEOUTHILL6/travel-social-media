@@ -2,7 +2,7 @@ import { MdArrowForward, MdArrowRight } from 'react-icons/md';
 import { Link as LinkRouter } from 'react-router-dom';
 import { useEffect, useState } from "react";
 import Video from '../../video/video.mp4';
-
+import Image from '../../images/image.png';
 
 export const HeroSection = () => {
     const [hover, setHover] = useState(false);
@@ -26,6 +26,10 @@ export const HeroSection = () => {
 
             <div id="hero-video-container">
                 <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
+            </div>
+
+            <div id="hero-background-container">
+                <img alt='image' src={Image} type="video/mp4" id='hero-background-img'></img>
             </div>
 
             <div id="hero-content">

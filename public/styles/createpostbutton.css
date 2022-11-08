@@ -57,5 +57,10 @@
     font-size: 1rem;
     cursor: pointer;
     margin-top: 1.2rem;
-    transition: background-color .3s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.back-button#hover {
+    background-color: white;
+    color: black;
 }
