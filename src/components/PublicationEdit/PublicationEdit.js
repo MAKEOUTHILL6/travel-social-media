@@ -77,7 +77,7 @@ export const PublicationEdit = () => {
 
                         <div className="register-container-info">
 
-                            <form method="POST" className="container-text" onSubmit={handleEdit} >
+                            <form method="POST" className="post-edit-container-text" onSubmit={handleEdit} >
 
                                 <h2>Edit Post</h2>
 

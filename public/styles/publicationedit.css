@@ -1,0 +1,102 @@
+.post-edit-container-text {
+    padding: 10px 10px 10px 10px;
+    text-align: center;
+}
+
+.post-edit-container-text>h2 {
+    margin-top: 4px;
+    font-size: 1.6rem;
+    text-align: center;
+    color: #000;
+}
+
+
+.post-edit-container-text>p {
+    font-size: 14px;
+    color: #000;
+    margin: 2px 0;
+    margin-bottom: 15px;
+}
+
+.post-edit-container-text>input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    border: none;
+    padding: 12px;
+    border-radius: 3px;
+}
+
+@media screen and (max-width: 768px) {
+    .post-edit-container-text>input {
+        width: 100%;
+    }
+}
+
+.post-edit-container-text>button {
+    width: 200px;
+    border: none;
+    padding: 12px;
+    border-radius: 3px;
+}
+
+label {
+    color: #000;
+    transform: translateY(-1.5rem);
+    font-size: 14px;
+    font-family: 'Barlow', sans-serif;
+    font-weight: 700;
+}
+
+.post-edit-container-text>input {
+    border: 2px solid #01bf71;
+    margin: 3px 0 7px;
+    font-size: 0.8rem;
+    color: #656880;
+}
+
+@media screen and (max-width: 376px){
+    .post-edit-container-text>input {
+        width: 290px;
+    }
+}
+
+.post-edit-container-text>textarea {
+    display: block;
+    border: 2px solid #01bf71;
+    margin: 3px 0 7px;
+    font-size: 0.8rem;
+    color: #656880;
+    width: 350px;
+    height: 130px;
+}
+
+@media screen and (max-width: 376px){
+    .post-edit-container-text>textarea {
+        width: 290px;
+    }
+}
+
+.post-edit-container-text>select {
+    display: block;
+    border: 2px solid #01bf71;
+    margin: 3px 0 7px;
+    font-size: 0.8rem;
+    color: #000;
+    width: 350px;
+    height: 30px;
+}
+
+.post-edit-container-text>.register-btn {
+    /* background-image: linear-gradient(to right, #19BEC2, #01bf71); */
+    background-color: black;
+    justify-content: center;
+    margin: 0 auto;
+    display: flex;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 5.6em;
+    transition: background-color .3s ease-in-out;
+}
