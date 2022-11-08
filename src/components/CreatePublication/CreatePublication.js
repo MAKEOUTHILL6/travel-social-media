@@ -2,14 +2,16 @@ import { AuthNav } from "../AuthNav/AuthNav"
 import Video from '../../video/video.mp4';
 import { useNavigate } from 'react-router-dom';
 import { createPost } from "../../api/data";
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { FcCheckmark } from 'react-icons/fc';
+import DisplayContext from '../../services/DisplayContext';
 import Image from '../../images/image.png';
 import axios from 'axios';
 
 
-
 export const CreatePublication = () => {
+
+    const { displayWidth } = useContext(DisplayContext);
 
     const [error, setError] = useState(null)
 
@@ -111,13 +113,17 @@ export const CreatePublication = () => {
 
             <section id="createPost-container">
 
-                <div id="hero-video-container">
-                    <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
-                </div>
+                {displayWidth ?
 
-                <div id="hero-background-container">
-                    <img alt='image' src={Image} type="video/mp4" id='hero-background-img'></img>
-                </div>
+                    <div id="hero-video-container">
+                        <img src={Image} type="video/mp4" id='hero-video'></img>
+                    </div>
+                    :
+                    <div id="hero-video-container">
+                        <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
+                    </div>
+
+                }
 
                 <div className="createPost-container-info">
 

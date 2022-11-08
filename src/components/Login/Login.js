@@ -3,11 +3,14 @@ import { login } from '../../api/data.js';
 import Video from '../../video/video.mp4';
 import { Link as LinkRouter } from 'react-router-dom';
 import { AuthNav } from '../AuthNav/AuthNav.js';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import DisplayContext from '../../services/DisplayContext';
 import Image from '../../images/image.png';
 
-
 export const Login = ({ updateUserRoute }) => {
+
+    const { displayWidth } = useContext(DisplayContext);
+
 
     const [error, setError] = useState(null)
 
@@ -40,13 +43,18 @@ export const Login = ({ updateUserRoute }) => {
 
             <section id="login-container">
 
-                <div id="hero-video-container">
-                    <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
-                </div>
+                {displayWidth ?
 
-                <div id="hero-background-container">
-                    <img alt='image' src={Image} type="video/mp4" id='hero-background-img'></img>
-                </div>
+                    <div id="hero-video-container">
+                        <img src={Image} type="video/mp4" id='hero-video'></img>
+                    </div>
+                    :
+                    <div id="hero-video-container">
+                        <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
+                    </div>
+
+                }
+
 
                 <div className="login-container-info">
 

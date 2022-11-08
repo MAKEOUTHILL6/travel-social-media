@@ -4,11 +4,15 @@ import Video from '../../video/video.mp4';
 import { useNavigate } from 'react-router-dom'
 import { Link as LinkRouter } from 'react-router-dom';
 import { AuthNav } from '../AuthNav/AuthNav.js';
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import DisplayContext from '../../services/DisplayContext';
 import Image from '../../images/image.png';
+
 import axios from 'axios';
 
 export const Register = ({ updateUserRoute }) => {
+
+    const { displayWidth } = useContext(DisplayContext);
 
     const [error, setError] = useState(null)
 
@@ -99,14 +103,18 @@ export const Register = ({ updateUserRoute }) => {
 
             <section id="register-container">
 
-                <div id="hero-video-container">
-                    <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
-                </div>
 
+                {displayWidth ?
 
-                <div id="hero-background-container">
-                    <img alt='image' src={Image} type="video/mp4" id='hero-background-img'></img>
-                </div>
+                    <div id="hero-video-container">
+                        <img src={Image} type="video/mp4" id='hero-video'></img>
+                    </div>
+                    :
+                    <div id="hero-video-container">
+                        <video autoPlay loop muted src={Video} type="video/mp4" id='hero-video'></video>
+                    </div>
+
+                }
 
                 <div className="register-container-info">
 

@@ -6,12 +6,12 @@ import { Login } from './components/Login/Login';
 import { Discover } from './pages/Discover';
 import { CreatePublication } from './components/CreatePublication/CreatePublication';
 import { DetailsPage } from './components/DetailsPage/DetailsPage';
-import { PublicationProvider } from './services/PublicationContext';
 import { Profile } from './components/Profile/Profile';
 import { EditProfile } from './components/EditProfile/EditProfile';
 import { PublicationEdit } from './components/PublicationEdit/PublicationEdit';
 import { useEffect, useState } from 'react';
 import { ProtectedAuth, ProtectedPost } from './services/Protected';
+import { DisplayProvider } from './services/DisplayContext';
 
 function App() {
 
@@ -30,7 +30,7 @@ function App() {
 
     return (
         <div>
-            <PublicationProvider>
+            <DisplayProvider>
                 <Routes>
                     <Route path='/' element={<Home />} />
 
@@ -60,7 +60,7 @@ function App() {
                     <Route path='/profile/edit/:userId' element={<EditProfile />} />
 
                 </Routes>
-            </PublicationProvider>
+            </DisplayProvider>
         </div>
     );
 }
