@@ -47,6 +47,27 @@
     width: 320px;
 }
 
+@media screen and (max-width: 768px){
+    .sidebar-searchbar{
+        right: 190px;
+        width: 390px;
+    }
+}
+
+@media screen and (max-width: 426px){
+    .sidebar-searchbar{
+        right: 64px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 376px){
+    .sidebar-searchbar{
+        right: 40px;
+        width: 300px;
+    }
+}
+
 .discover-sidebar-button-wrapper {
     position: relative;
     display: flex;

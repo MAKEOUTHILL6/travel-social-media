@@ -54,7 +54,7 @@ export const DiscoverSidebar = ({
                             <input type="text" className="sidebar-searchbar" name="search" placeholder="Search by location title" />
                         </form>
                     </li>
-                </ul>
+                </ul> 
 
                 {user ?
                     <>
