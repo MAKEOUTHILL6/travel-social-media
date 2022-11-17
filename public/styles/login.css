@@ -24,6 +24,12 @@
     }
 }
 
+@media screen and (max-width: 1025px) {
+    .login-container-info {
+        left: 22%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .login-container-info {
         width: 400px;

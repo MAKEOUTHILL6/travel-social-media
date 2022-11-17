@@ -47,6 +47,13 @@
     }
 }
 
+@media screen and (max-width: 1025px) {
+    .register-container-info {
+        width: 550px;
+        left: 22%;
+        top: 0;
+    }
+}
 
 @media screen and (max-width: 768px) {
     .register-container-info {
