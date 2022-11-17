@@ -1,5 +1,5 @@
 #discover-main {
-    height: 1100px;
+    height: auto;
     background-color: black;
     display: flex;
     justify-content: center;
@@ -48,6 +48,12 @@
         margin-right: 60px;
     }
 }
+@media screen and (max-width: 1441px){
+    .publication-wrapper{
+        margin-left: 166px;
+    }
+}
+
 
 .publication-image-container{
     width: 100%;

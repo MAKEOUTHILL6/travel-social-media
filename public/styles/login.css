@@ -18,6 +18,12 @@
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
 }
 
+@media screen and (max-width: 1441px) {
+    .login-container-info {
+        left: 32%;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .login-container-info {
         width: 400px;

@@ -39,6 +39,15 @@
     box-shadow: 0 20px 30px rgba(0, 0, 0, 0.185);
 }
 
+@media screen and (max-width: 1441px) {
+    .register-container-info {
+        width: 550px;
+        left: 32%;
+        top: 0;
+    }
+}
+
+
 @media screen and (max-width: 768px) {
     .register-container-info {
         width: 400px;
@@ -80,6 +89,13 @@
     position: absolute;
     bottom: 110px;
     right: 53px;
+}
+
+@media screen and (max-width: 1441px) {
+    .image-form {
+        right: 26px;
+        bottom: 115px;
+    }
 }
 
 @media screen and (max-width: 768px) {
